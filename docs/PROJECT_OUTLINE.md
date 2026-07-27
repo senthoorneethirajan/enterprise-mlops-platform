@@ -44,8 +44,9 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 - Evidence → `docs/evidence/task-01/` (run logs, metrics, MLflow state export, dvc.lock)
 
 ### Phase 2 — CI/CD for ML (Tasks 2-4)
-- [ ] Task 2: GitHub Actions workflow — on push: install, `dvc repro`, evaluation gate,
-      upload model + metrics artifacts
+- [x] Task 2: GitHub Actions workflow — on push: install, `dvc repro`, evaluation gate,
+      upload model + metrics artifacts — COMPLETE 2026-07-27, run 30251369242 green
+      (repo: github.com/senthoorneethirajan/enterprise-mlops-platform)
 - [ ] Task 3: `docker/Dockerfile` for FastAPI serving app; `k8s/deployment.yaml`,
       `k8s/service.yaml`; working `/predict` + `/health` endpoints
 - [ ] Task 4: `k8s/canary.yaml`; rollback script/job that flips traffic back and rolls the

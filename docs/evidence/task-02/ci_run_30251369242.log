@@ -1,0 +1,827 @@
+train-and-validate	Set up job	﻿2026-07-27T08:49:25.7733126Z Current runner version: '2.335.1'
+train-and-validate	Set up job	2026-07-27T08:49:25.7760290Z ##[group]Runner Image Provisioner
+train-and-validate	Set up job	2026-07-27T08:49:25.7761380Z Hosted Compute Agent
+train-and-validate	Set up job	2026-07-27T08:49:25.7762088Z Version: 20260707.563
+train-and-validate	Set up job	2026-07-27T08:49:25.7762726Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+train-and-validate	Set up job	2026-07-27T08:49:25.7763462Z Build Date: 2026-07-07T19:33:50Z
+train-and-validate	Set up job	2026-07-27T08:49:25.7764624Z Worker ID: {3554bead-bf50-40c1-b089-57eaaf4bb259}
+train-and-validate	Set up job	2026-07-27T08:49:25.7765356Z Azure Region: northcentralus
+train-and-validate	Set up job	2026-07-27T08:49:25.7766013Z ##[endgroup]
+train-and-validate	Set up job	2026-07-27T08:49:25.7767539Z ##[group]Operating System
+train-and-validate	Set up job	2026-07-27T08:49:25.7768284Z Ubuntu
+train-and-validate	Set up job	2026-07-27T08:49:25.7768914Z 24.04.4
+train-and-validate	Set up job	2026-07-27T08:49:25.7769475Z LTS
+train-and-validate	Set up job	2026-07-27T08:49:25.7770001Z ##[endgroup]
+train-and-validate	Set up job	2026-07-27T08:49:25.7771114Z ##[group]Runner Image
+train-and-validate	Set up job	2026-07-27T08:49:25.7771841Z Image: ubuntu-24.04
+train-and-validate	Set up job	2026-07-27T08:49:25.7772481Z Version: 20260720.247.2
+train-and-validate	Set up job	2026-07-27T08:49:25.7773531Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+train-and-validate	Set up job	2026-07-27T08:49:25.7775271Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+train-and-validate	Set up job	2026-07-27T08:49:25.7776261Z ##[endgroup]
+train-and-validate	Set up job	2026-07-27T08:49:25.7777490Z ##[group]GITHUB_TOKEN Permissions
+train-and-validate	Set up job	2026-07-27T08:49:25.7779604Z Contents: read
+train-and-validate	Set up job	2026-07-27T08:49:25.7780298Z Metadata: read
+train-and-validate	Set up job	2026-07-27T08:49:25.7781381Z Packages: read
+train-and-validate	Set up job	2026-07-27T08:49:25.7781946Z ##[endgroup]
+train-and-validate	Set up job	2026-07-27T08:49:25.7784594Z Secret source: Actions
+train-and-validate	Set up job	2026-07-27T08:49:25.7785668Z Prepare workflow directory
+train-and-validate	Set up job	2026-07-27T08:49:25.8132793Z Prepare all required actions
+train-and-validate	Set up job	2026-07-27T08:49:25.8171286Z Getting action download info
+train-and-validate	Set up job	2026-07-27T08:49:26.0569726Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+train-and-validate	Set up job	2026-07-27T08:49:26.5521344Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+train-and-validate	Set up job	2026-07-27T08:49:26.6928800Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+train-and-validate	Set up job	2026-07-27T08:49:27.2356154Z Complete job name: train-and-validate
+train-and-validate	Run actions/checkout@v4	﻿2026-07-27T08:49:27.3273682Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3285075Z ##[group]Run actions/checkout@v4
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3286299Z with:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3287339Z   repository: senthoorneethirajan/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3297333Z   token: ***
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3298133Z   ssh-strict: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3298943Z   ssh-user: git
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3299762Z   persist-credentials: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3300810Z   clean: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3301634Z   sparse-checkout-cone-mode: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3302633Z   fetch-depth: 1
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3303432Z   fetch-tags: false
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3304247Z   show-progress: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3305101Z   lfs: false
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3305880Z   submodules: false
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3306761Z   set-safe-directory: true
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3307724Z   allow-unsafe-pr-checkout: false
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.3309004Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4365920Z Syncing repository: senthoorneethirajan/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4370657Z ##[group]Getting Git version info
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4373580Z Working directory is '/home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform'
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4377537Z [command]/usr/bin/git version
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4426840Z git version 2.54.0
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4453288Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4484871Z Temporarily overriding HOME='/home/runner/work/_temp/54ef3bfa-dc48-4b3a-99bf-68c00f069dcb' before making global git config changes
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4502748Z Adding repository directory to the temporary git global config as a safe directory
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4508049Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4545281Z Deleting the contents of '/home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform'
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4549933Z ##[group]Initializing the repository
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4554143Z [command]/usr/bin/git init /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4694541Z hint: Using 'master' as the name for the initial branch. This default branch name
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4698072Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4701516Z hint: to use in all of your new repositories, which will suppress this warning,
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4705319Z hint: call:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4706280Z hint:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4707393Z hint: 	git config --global init.defaultBranch <name>
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4708897Z hint:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4711016Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4714215Z hint: 'development'. The just-created branch can be renamed via this command:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4716184Z hint:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4717129Z hint: 	git branch -m <name>
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4718058Z hint:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4720104Z hint: Disable this message with "git config set advice.defaultBranchName false"
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4724510Z Initialized empty Git repository in /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform/.git/
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4731716Z [command]/usr/bin/git remote add origin https://github.com/senthoorneethirajan/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4764602Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4766730Z ##[group]Disabling automatic garbage collection
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4768605Z [command]/usr/bin/git config --local gc.auto 0
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4800870Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4803114Z ##[group]Setting up auth
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4807473Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.4851815Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5274314Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5312706Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5535615Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5571631Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5792849Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5832531Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5834842Z ##[group]Fetching the repository
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.5843121Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +883542c3df2a751e5519b0af44923c46cbc68838:refs/remotes/origin/main
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8639692Z From https://github.com/senthoorneethirajan/enterprise-mlops-platform
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8640848Z  * [new ref]         883542c3df2a751e5519b0af44923c46cbc68838 -> origin/main
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8679400Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8680149Z ##[group]Determining the checkout info
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8688296Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8690907Z [command]/usr/bin/git sparse-checkout disable
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8740662Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8772781Z ##[group]Checking out the ref
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8778376Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8877900Z Switched to a new branch 'main'
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8881779Z branch 'main' set up to track 'origin/main'.
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8891893Z ##[endgroup]
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8935492Z [command]/usr/bin/git log -1 --format=%H
+train-and-validate	Run actions/checkout@v4	2026-07-27T08:49:27.8962143Z 883542c3df2a751e5519b0af44923c46cbc68838
+train-and-validate	Run actions/setup-python@v5	﻿2026-07-27T08:49:27.9254984Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9256897Z ##[group]Run actions/setup-python@v5
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9257303Z with:
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9257634Z   python-version: 3.12
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9257990Z   cache: pip
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9258318Z   check-latest: false
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9261304Z   token: ***
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9261677Z   update-environment: true
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9262080Z   allow-prereleases: false
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9262486Z   freethreaded: false
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:27.9262839Z ##[endgroup]
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.0581198Z ##[group]Installed versions
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.0702614Z (node:2175) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.0800914Z (Use `node --trace-deprecation ...` to show where the warning was created)
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.0802064Z Successfully set up CPython (3.12.13)
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.0803352Z ##[endgroup]
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.1583601Z [command]/opt/hostedtoolcache/Python/3.12.13/x64/bin/pip cache dir
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.5066269Z /home/runner/.cache/pip
+train-and-validate	Run actions/setup-python@v5	2026-07-27T08:49:28.6381423Z pip cache is not found
+train-and-validate	Install dependencies	﻿2026-07-27T08:49:28.6533604Z ##[group]Run python -m pip install --upgrade pip
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6534305Z ^[[36;1mpython -m pip install --upgrade pip^[[0m
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6534785Z ^[[36;1mpip install -r requirements.txt^[[0m
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6588613Z shell: /usr/bin/bash -e {0}
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6589059Z env:
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6589469Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6590071Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6591007Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6591554Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6592077Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6592619Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+train-and-validate	Install dependencies	2026-07-27T08:49:28.6593086Z ##[endgroup]
+train-and-validate	Install dependencies	2026-07-27T08:49:29.2284315Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages (26.1.2)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.0644471Z Collecting numpy<3,>=1.26 (from -r requirements.txt (line 3))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.1151798Z   Downloading numpy-2.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.2250693Z Collecting pandas<3,>=2.2 (from -r requirements.txt (line 4))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.2287003Z   Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (91 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.3488859Z Collecting scikit-learn<2,>=1.4 (from -r requirements.txt (line 5))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.3530094Z   Downloading scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.3880944Z Collecting mlflow<3,>=2.14 (from -r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.3913064Z   Downloading mlflow-2.22.5-py3-none-any.whl.metadata (30 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.4535945Z Collecting dvc<4,>=3.48 (from -r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.4569589Z   Downloading dvc-3.67.1-py3-none-any.whl.metadata (17 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.4990267Z Collecting PyYAML>=6.0 (from -r requirements.txt (line 8))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5023598Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5215201Z Collecting joblib>=1.3 (from -r requirements.txt (line 9))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5247806Z   Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5640674Z Collecting fastapi<1,>=0.110 (from -r requirements.txt (line 10))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5673015Z   Downloading fastapi-0.140.0-py3-none-any.whl.metadata (27 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5946952Z Collecting uvicorn<1,>=0.29 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.5978463Z   Downloading uvicorn-0.51.0-py3-none-any.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6128807Z Collecting prometheus-client>=0.20 (from -r requirements.txt (line 12))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6159767Z   Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6410731Z Collecting pytest>=8.0 (from -r requirements.txt (line 13))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6442487Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6587427Z Collecting python-dateutil>=2.8.2 (from pandas<3,>=2.2->-r requirements.txt (line 4))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6617386Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.6968661Z Collecting pytz>=2020.1 (from pandas<3,>=2.2->-r requirements.txt (line 4))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.7003110Z   Downloading pytz-2026.3.post1-py2.py3-none-any.whl.metadata (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.7153370Z Collecting tzdata>=2022.7 (from pandas<3,>=2.2->-r requirements.txt (line 4))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.7183795Z   Downloading tzdata-2026.3-py2.py3-none-any.whl.metadata (1.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.8598418Z Collecting scipy>=1.10.0 (from scikit-learn<2,>=1.4->-r requirements.txt (line 5))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.8640183Z   Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9194711Z Collecting narwhals>=2.0.1 (from scikit-learn<2,>=1.4->-r requirements.txt (line 5))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9226151Z   Downloading narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9399792Z Collecting threadpoolctl>=3.5.0 (from scikit-learn<2,>=1.4->-r requirements.txt (line 5))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9429763Z   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9673305Z Collecting mlflow-skinny==2.22.5 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9704075Z   Downloading mlflow_skinny-2.22.5-py3-none-any.whl.metadata (31 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9915925Z Collecting Flask<4 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:30.9946738Z   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0096048Z Collecting Jinja2<4,>=2.11 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0126057Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0338436Z Collecting alembic!=1.10.0,<2 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0372103Z   Downloading alembic-1.18.5-py3-none-any.whl.metadata (7.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0581329Z Collecting docker<8,>=4.0.0 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0614212Z   Downloading docker-7.2.0-py3-none-any.whl.metadata (3.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0802128Z Collecting graphene<4 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.0832376Z   Downloading graphene-3.4.3-py2.py3-none-any.whl.metadata (6.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.1014750Z Collecting gunicorn<24 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.1046717Z   Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.1216843Z Collecting markdown<4,>=3.3 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.1246869Z   Downloading markdown-3.10.2-py3-none-any.whl.metadata (5.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.2553085Z Collecting matplotlib<4 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.2588700Z   Downloading matplotlib-3.11.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.3551430Z Collecting pyarrow<20,>=4.0.0 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.3586072Z   Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6151485Z Collecting sqlalchemy<3,>=1.4.0 (from mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6187310Z   Downloading sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6419784Z Collecting cachetools<6,>=5.0.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6450805Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6618924Z Collecting click<9,>=7.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6650752Z   Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6808268Z Collecting cloudpickle<4 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.6840538Z   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7117424Z Collecting databricks-sdk<1,>=0.20.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7150222Z   Downloading databricks_sdk-0.122.0-py3-none-any.whl.metadata (44 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7653926Z Collecting gitpython<4,>=3.1.9 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7686730Z   Downloading gitpython-3.1.57-py3-none-any.whl.metadata (13 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7953946Z Collecting importlib_metadata!=4.7.0,<9,>=3.7.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.7986721Z   Downloading importlib_metadata-8.9.0-py3-none-any.whl.metadata (4.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8191694Z Collecting opentelemetry-api<3,>=1.9.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8220956Z   Downloading opentelemetry_api-1.44.0-py3-none-any.whl.metadata (1.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8417471Z Collecting opentelemetry-sdk<3,>=1.9.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8447395Z   Downloading opentelemetry_sdk-1.44.0-py3-none-any.whl.metadata (1.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8613165Z Collecting packaging<25 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:31.8643798Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.0075901Z Collecting protobuf<7,>=3.12.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.0110564Z   Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl.metadata (593 bytes)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1123685Z Collecting pydantic<3,>=1.10.8 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1158877Z   Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1427486Z Collecting requests<3,>=2.17.3 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1460100Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1608413Z Collecting sqlparse<1,>=0.4.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1638221Z   Downloading sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1813444Z Collecting typing-extensions<5,>=4.0.0 (from mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1845559Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.1994590Z Collecting attrs>=22.2.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2024507Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2305642Z Collecting celery (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2339050Z   Downloading celery-5.6.3-py3-none-any.whl.metadata (23 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2643061Z Collecting colorama>=0.3.9 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2675608Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2817313Z Collecting configobj>=5.0.9 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2849630Z   Downloading configobj-5.0.9-py2.py3-none-any.whl.metadata (3.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2966701Z Collecting distro>=1.3 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.2997128Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.3136467Z Collecting dpath<3,>=2.1.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.3188910Z   Downloading dpath-2.2.0-py3-none-any.whl.metadata (15 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.4584978Z Collecting dulwich (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.4618549Z   Downloading dulwich-1.2.12-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5029811Z Collecting dvc-data<3.19.0,>=3.18.2 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5065492Z   Downloading dvc_data-3.18.3-py3-none-any.whl.metadata (4.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5208910Z Collecting dvc-http>=2.29.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5240537Z   Downloading dvc_http-2.32.0-py3-none-any.whl.metadata (1.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5509997Z Collecting dvc-objects (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5543805Z   Downloading dvc_objects-5.2.0-py3-none-any.whl.metadata (3.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5692687Z Collecting dvc-render<2,>=1.0.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5724807Z   Downloading dvc_render-1.0.2-py3-none-any.whl.metadata (5.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5879402Z Collecting dvc-studio-client<1,>=0.21 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.5914286Z   Downloading dvc_studio_client-0.23.0-py3-none-any.whl.metadata (4.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6056659Z Collecting dvc-task<1,>=0.3.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6087104Z   Downloading dvc_task-0.40.2-py3-none-any.whl.metadata (10.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6221338Z Collecting flatten-dict<1,>=0.4.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6269792Z   Downloading flatten_dict-0.5.0-py3-none-any.whl.metadata (8.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6411336Z Collecting flufl.lock<10,>=8.1.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6444394Z   Downloading flufl_lock-9.1.0-py3-none-any.whl.metadata (3.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6618732Z Collecting fsspec>=2024.2.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.6649363Z   Downloading fsspec-2026.6.0-py3-none-any.whl.metadata (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7289117Z Collecting funcy>=1.14 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7325548Z   Downloading funcy-2.0-py2.py3-none-any.whl.metadata (5.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7436574Z Collecting grandalf<1,>=0.7 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7466612Z   Downloading grandalf-0.8-py3-none-any.whl.metadata (1.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7615253Z Collecting gto<2,>=1.6.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7646494Z   Downloading gto-1.10.1-py3-none-any.whl.metadata (4.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7807254Z Collecting hydra-core>=1.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7839253Z   Downloading hydra_core-1.3.4-py3-none-any.whl.metadata (5.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7957431Z Collecting iterative-telemetry>=0.0.7 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.7988137Z   Downloading iterative_telemetry-0.0.10-py3-none-any.whl.metadata (4.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8287133Z Collecting kombu (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8320032Z   Downloading kombu-5.6.2-py3-none-any.whl.metadata (3.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8548461Z Collecting networkx>=2.5 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8587131Z   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8880155Z Collecting omegaconf (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.8913109Z   Downloading omegaconf-2.3.1-py3-none-any.whl.metadata (4.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9059391Z Collecting pathspec<2,>=0.10.3 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9090067Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9298081Z Collecting platformdirs<5,>=3.1.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9328772Z   Downloading platformdirs-4.11.0-py3-none-any.whl.metadata (5.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9966013Z Collecting psutil>=5.8 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:32.9999520Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0169076Z Collecting pydot>=1.2.4 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0198564Z   Downloading pydot-4.0.1-py3-none-any.whl.metadata (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0350921Z Collecting pygtrie>=2.3.2 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0383072Z   Downloading pygtrie-2.5.0-py3-none-any.whl.metadata (7.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0606658Z Collecting pyparsing>=3.0.0 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0638117Z   Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0965970Z Collecting rich>=12 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.0996590Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2139722Z Collecting ruamel.yaml>=0.17.11 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2173848Z   Downloading ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2395213Z Collecting scmrepo<4,>=3.5.2 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2426485Z   Downloading scmrepo-3.6.2-py3-none-any.whl.metadata (4.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2568051Z Collecting shortuuid>=0.5 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2597931Z   Downloading shortuuid-1.0.13-py3-none-any.whl.metadata (5.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2764021Z Collecting shtab<2,>=1.3.4 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2794570Z   Downloading shtab-1.8.1-py3-none-any.whl.metadata (7.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2917739Z Collecting tabulate>=0.8.7 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.2949515Z   Downloading tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3132155Z Collecting tomlkit>=0.11.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3163127Z   Downloading tomlkit-0.15.1-py3-none-any.whl.metadata (3.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3416384Z Collecting tqdm<5,>=4.63.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3448086Z   Downloading tqdm-4.69.1-py3-none-any.whl.metadata (57 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3626497Z Collecting voluptuous>=0.11.7 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3656035Z   Downloading voluptuous-0.16.0-py3-none-any.whl.metadata (20 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3784595Z Collecting zc.lockfile>=1.2.1 (from dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.3814649Z   Downloading zc_lockfile-4.0-py3-none-any.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4054899Z Collecting starlette>=0.46.0 (from fastapi<1,>=0.110->-r requirements.txt (line 10))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4099748Z   Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4256130Z Collecting typing-inspection>=0.4.2 (from fastapi<1,>=0.110->-r requirements.txt (line 10))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4286261Z   Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4384279Z Collecting annotated-doc>=0.0.2 (from fastapi<1,>=0.110->-r requirements.txt (line 10))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4414612Z   Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4540113Z Collecting h11>=0.8 (from uvicorn<1,>=0.29->uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4569299Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4814663Z Collecting Mako (from alembic!=1.10.0,<2->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.4845679Z   Downloading mako-1.3.12-py3-none-any.whl.metadata (2.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5255425Z Collecting google-auth~=2.0 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5288349Z   Downloading google_auth-2.56.2-py3-none-any.whl.metadata (6.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5623275Z Collecting urllib3<3,>=1.26 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5653787Z   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5871613Z Collecting dictdiffer>=0.8.1 (from dvc-data<3.19.0,>=3.18.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.5900941Z   Downloading dictdiffer-0.10.0-py3-none-any.whl.metadata (2.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.6071492Z Collecting diskcache>=5.2.1 (from dvc-data<3.19.0,>=3.18.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.6101104Z   Downloading diskcache-5.6.3-py3-none-any.whl.metadata (20 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.6280065Z Collecting sqltrie<1,>=0.11.0 (from dvc-data<3.19.0,>=3.18.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.6311395Z   Downloading sqltrie-0.11.2-py3-none-any.whl.metadata (3.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9182450Z Collecting orjson<4,>=3 (from dvc-data<3.19.0,>=3.18.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9218411Z   Downloading orjson-3.11.9-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (41 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9527629Z Collecting billiard<5.0,>=4.2.1 (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9558171Z   Downloading billiard-4.2.4-py3-none-any.whl.metadata (4.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9687352Z Collecting vine<6.0,>=5.1.0 (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9719645Z   Downloading vine-5.1.0-py3-none-any.whl.metadata (2.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9835654Z Collecting click-didyoumean>=0.3.0 (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9866033Z   Downloading click_didyoumean-0.3.1-py3-none-any.whl.metadata (3.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9970640Z Collecting click-repl>=0.2.0 (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:33.9999402Z   Downloading click_repl-0.3.0-py3-none-any.whl.metadata (3.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0108233Z Collecting click-plugins>=1.1.1 (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0138843Z   Downloading click_plugins-1.1.1.2-py2.py3-none-any.whl.metadata (6.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0326261Z Collecting tzlocal (from celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0355747Z   Downloading tzlocal-5.4.4-py3-none-any.whl.metadata (7.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0499144Z Collecting blinker>=1.9.0 (from Flask<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0528955Z   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0719454Z Collecting itsdangerous>=2.2.0 (from Flask<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.0760858Z   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1242099Z Collecting markupsafe>=2.1.1 (from Flask<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1278231Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1473661Z Collecting werkzeug>=3.1.0 (from Flask<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1506282Z   Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1659184Z Collecting atpublic (from flufl.lock<10,>=8.1.0->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1689433Z   Downloading atpublic-7.0.0-py3-none-any.whl.metadata (2.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1823303Z Collecting gitdb<5,>=4.0.1 (from gitpython<4,>=3.1.9->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1853592Z   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.1978937Z Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython<4,>=3.1.9->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.2008916Z   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.2199957Z Collecting pyasn1-modules>=0.2.1 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.2230187Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.3996104Z Collecting cryptography>=38.0.3 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4030178Z   Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4257156Z Collecting graphql-core<3.3,>=3.1 (from graphene<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4288411Z   Downloading graphql_core-3.2.11-py3-none-any.whl.metadata (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4413041Z Collecting graphql-relay<3.3,>=3.1 (from graphene<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4443582Z   Downloading graphql_relay-3.2.0-py3-none-any.whl.metadata (12 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4638823Z Collecting entrypoints (from gto<2,>=1.6.0->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4668022Z   Downloading entrypoints-0.4-py3-none-any.whl.metadata (2.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4844398Z Collecting pydantic-settings>=2 (from gto<2,>=1.6.0->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.4873192Z   Downloading pydantic_settings-2.14.2-py3-none-any.whl.metadata (3.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5025794Z Collecting semver>=2.13.0 (from gto<2,>=1.6.0->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5056469Z   Downloading semver-3.0.4-py3-none-any.whl.metadata (6.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5244498Z Collecting zipp>=3.20 (from importlib_metadata!=4.7.0,<9,>=3.7.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5273164Z   Downloading zipp-4.1.0-py3-none-any.whl.metadata (3.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5468308Z Collecting amqp<6.0.0,>=5.1.1 (from kombu->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.5500748Z   Downloading amqp-5.3.1-py3-none-any.whl.metadata (8.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.6146810Z Collecting contourpy>=1.0.1 (from matplotlib<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.6222993Z   Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.6350699Z Collecting cycler>=0.10 (from matplotlib<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.6382193Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.8482142Z Collecting fonttools>=4.28.2 (from matplotlib<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.8517844Z   Downloading fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (118 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:34.9226623Z Collecting kiwisolver>=1.3.1 (from matplotlib<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:34.9266079Z   Downloading kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.0948203Z Collecting pillow>=9 (from matplotlib<4->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.0983690Z   Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.1218656Z Collecting opentelemetry-semantic-conventions==0.65b0 (from opentelemetry-sdk<3,>=1.9.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.1250398Z   Downloading opentelemetry_semantic_conventions-0.65b0-py3-none-any.whl.metadata (2.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.1452452Z Collecting annotated-types>=0.6.0 (from pydantic<3,>=1.10.8->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.1483561Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.8387515Z Collecting pydantic-core==2.46.4 (from pydantic<3,>=1.10.8->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.8431141Z   Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.8608580Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas<3,>=2.2->-r requirements.txt (line 4))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.8639244Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.9617312Z Collecting charset_normalizer<4,>=2 (from requests<3,>=2.17.3->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.9670734Z   Downloading charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (41 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:35.9839659Z Collecting idna<4,>=2.5 (from requests<3,>=2.17.3->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:35.9870426Z   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.0041218Z Collecting certifi>=2023.5.7 (from requests<3,>=2.17.3->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.0072491Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.0931817Z Collecting pygit2>=1.14.0 (from scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.0970157Z   Downloading pygit2-1.19.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.1168599Z Collecting asyncssh<3,>=2.13.1 (from scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.1198390Z   Downloading asyncssh-2.24.0-py3-none-any.whl.metadata (9.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.1367757Z Collecting aiohttp-retry>=2.5.0 (from scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.1397426Z   Downloading aiohttp_retry-2.9.1-py3-none-any.whl.metadata (8.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.2878419Z Collecting greenlet>=1 (from sqlalchemy<3,>=1.4.0->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.2912809Z   Downloading greenlet-3.5.4-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3316533Z Collecting httptools>=0.8.0 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3348751Z   Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3499235Z Collecting python-dotenv>=0.13 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3529849Z   Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3912537Z Collecting uvloop>=0.15.1 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.3948470Z   Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.4683524Z Collecting watchfiles>=0.20 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.4718146Z   Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.5621645Z Collecting websockets>=13.0 (from uvicorn[standard]<1,>=0.29->-r requirements.txt (line 11))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.5656679Z   Downloading websockets-16.1.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.5810712Z Collecting iniconfig>=1.0.1 (from pytest>=8.0->-r requirements.txt (line 13))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.5841329Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.5988740Z Collecting pluggy<2,>=1.5 (from pytest>=8.0->-r requirements.txt (line 13))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.6018852Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:36.6198678Z Collecting pygments>=2.7.2 (from pytest>=8.0->-r requirements.txt (line 13))
+train-and-validate	Install dependencies	2026-07-27T08:49:36.6229050Z   Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.1782186Z Collecting aiohttp (from aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:37.1819151Z   Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.2177738Z Collecting prompt-toolkit>=3.0.36 (from click-repl>=0.2.0->celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:37.2210385Z   Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3276548Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3310232Z   Downloading cffi-2.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3467047Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3497668Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3795856Z Collecting antlr4-python3-runtime==4.9.* (from hydra-core>=1.1->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:37.3843945Z   Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:37.4098009Z   Installing build dependencies: started
+train-and-validate	Install dependencies	2026-07-27T08:49:38.1136987Z   Installing build dependencies: finished with status 'done'
+train-and-validate	Install dependencies	2026-07-27T08:49:38.1143169Z   Getting requirements to build wheel: started
+train-and-validate	Install dependencies	2026-07-27T08:49:38.4875128Z   Getting requirements to build wheel: finished with status 'done'
+train-and-validate	Install dependencies	2026-07-27T08:49:38.4884161Z   Preparing metadata (pyproject.toml): started
+train-and-validate	Install dependencies	2026-07-27T08:49:38.6772334Z   Preparing metadata (pyproject.toml): finished with status 'done'
+train-and-validate	Install dependencies	2026-07-27T08:49:38.6915737Z Collecting appdirs (from iterative-telemetry>=0.0.7->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.6946802Z   Downloading appdirs-1.4.4-py2.py3-none-any.whl.metadata (9.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7159332Z Collecting filelock (from iterative-telemetry>=0.0.7->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7190436Z   Downloading filelock-3.32.0-py3-none-any.whl.metadata (2.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7418377Z Collecting wcwidth>=0.1.4 (from prompt-toolkit>=3.0.36->click-repl>=0.2.0->celery->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7450237Z   Downloading wcwidth-0.8.2-py3-none-any.whl.metadata (43 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7696707Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==2.22.5->mlflow<3,>=2.14->-r requirements.txt (line 6))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.7728120Z   Downloading pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8052969Z Collecting markdown-it-py>=2.2.0 (from rich>=12->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8084051Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8232826Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8262644Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8907476Z Collecting anyio<5,>=3.6.2 (from starlette>=0.46.0->fastapi<1,>=0.110->-r requirements.txt (line 10))
+train-and-validate	Install dependencies	2026-07-27T08:49:38.8939327Z   Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0059285Z Collecting setuptools (from zc.lockfile>=1.2.1->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0074136Z   Using cached setuptools-83.0.0-py3-none-any.whl.metadata (6.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0267262Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0298487Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0401004Z Collecting aiosignal>=1.4.0 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.0431360Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.1953511Z Collecting frozenlist>=1.1.1 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.1988375Z   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.4094233Z Collecting multidict<7.0,>=4.5 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.4129213Z   Downloading multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.4678505Z Collecting propcache>=0.2.0 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.4714958Z   Downloading propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.7097103Z Collecting yarl<2.0,>=1.17.0 (from aiohttp->aiohttp-retry>=2.5.0->scmrepo<4,>=3.5.2->dvc<4,>=3.48->-r requirements.txt (line 7))
+train-and-validate	Install dependencies	2026-07-27T08:49:39.7131626Z   Downloading yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (103 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.7639469Z Downloading numpy-2.5.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.8289967Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 270.4 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:39.8325408Z Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.8748528Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 307.0 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:39.8792034Z Downloading scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:39.9189792Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 239.5 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:39.9277383Z Downloading mlflow-2.22.5-py3-none-any.whl (29.0 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0268240Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.0/29.0 MB 299.0 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0317193Z Downloading mlflow_skinny-2.22.5-py3-none-any.whl (6.3 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0552126Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 286.2 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0588776Z Downloading dvc-3.67.1-py3-none-any.whl (470 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0652871Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0722782Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 116.2 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0755068Z Downloading fastapi-0.140.0-py3-none-any.whl (130 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0812527Z Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0866786Z Downloading alembic-1.18.5-py3-none-any.whl (264 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0921292Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.0968780Z Downloading click-8.4.2-py3-none-any.whl (119 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1054616Z Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1103764Z Downloading databricks_sdk-0.122.0-py3-none-any.whl (969 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1162727Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 969.1/969.1 kB 196.6 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1192102Z Downloading docker-7.2.0-py3-none-any.whl (148 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1243605Z Downloading dpath-2.2.0-py3-none-any.whl (17 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1289729Z Downloading dvc_data-3.18.3-py3-none-any.whl (79 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1340752Z Downloading dvc_objects-5.2.0-py3-none-any.whl (33 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1387157Z Downloading dvc_render-1.0.2-py3-none-any.whl (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1435444Z Downloading dvc_studio_client-0.23.0-py3-none-any.whl (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1485128Z Downloading dvc_task-0.40.2-py3-none-any.whl (21 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1535752Z Downloading celery-5.6.3-py3-none-any.whl (451 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1593150Z Downloading billiard-4.2.4-py3-none-any.whl (87 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1642555Z Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1710365Z Downloading flatten_dict-0.5.0-py3-none-any.whl (9.9 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1758333Z Downloading flufl_lock-9.1.0-py3-none-any.whl (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1807860Z Downloading gitpython-3.1.57-py3-none-any.whl (217 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1860216Z Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1913239Z Downloading google_auth-2.56.2-py3-none-any.whl (258 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.1967805Z Downloading grandalf-0.8-py3-none-any.whl (41 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2017762Z Downloading graphene-3.4.3-py2.py3-none-any.whl (114 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2069478Z Downloading graphql_core-3.2.11-py3-none-any.whl (214 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2122939Z Downloading graphql_relay-3.2.0-py3-none-any.whl (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2182852Z Downloading gto-1.10.1-py3-none-any.whl (45 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2232293Z Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2281208Z Downloading importlib_metadata-8.9.0-py3-none-any.whl (27 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2341860Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2400468Z Downloading kombu-5.6.2-py3-none-any.whl (214 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2454650Z Downloading vine-5.1.0-py3-none-any.whl (9.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2501376Z Downloading amqp-5.3.1-py3-none-any.whl (50 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2554716Z Downloading markdown-3.10.2-py3-none-any.whl (108 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2617954Z Downloading matplotlib-3.11.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.0 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2949674Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 319.3 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.2981308Z Downloading opentelemetry_api-1.44.0-py3-none-any.whl (60 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3033029Z Downloading opentelemetry_sdk-1.44.0-py3-none-any.whl (137 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3091278Z Downloading opentelemetry_semantic_conventions-0.65b0-py3-none-any.whl (204 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3146876Z Downloading orjson-3.11.9-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (134 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3198452Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3311227Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3360410Z Downloading platformdirs-4.11.0-py3-none-any.whl (23 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3413065Z Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.3486279Z Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (42.1 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.4803629Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 MB 323.7 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.4836853Z Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.4905124Z Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.4997768Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 264.5 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.5030784Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.5089263Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.5146216Z Downloading charset_normalizer-3.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.5201483Z Downloading idna-3.18-py3-none-any.whl (65 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.5259366Z Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6395422Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 315.6 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6428247Z Downloading scmrepo-3.6.2-py3-none-any.whl (74 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6483400Z Downloading asyncssh-2.24.0-py3-none-any.whl (381 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6595688Z Downloading dulwich-1.2.12-cp312-cp312-manylinux_2_28_x86_64.whl (1.5 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6669819Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 244.0 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6700288Z Downloading shtab-1.8.1-py3-none-any.whl (14 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6747457Z Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6803085Z Downloading sqlalchemy-2.0.51-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6944867Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 267.0 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.6976305Z Downloading sqlparse-0.5.5-py3-none-any.whl (46 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7028710Z Downloading sqltrie-0.11.2-py3-none-any.whl (17 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7081614Z Downloading tqdm-4.69.1-py3-none-any.whl (675 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7137348Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 675.5/675.5 kB 125.6 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7167585Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7219077Z Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7273027Z Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7331870Z Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7386013Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7444386Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7496697Z Downloading aiohttp_retry-2.9.1-py3-none-any.whl (10.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7546735Z Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7593643Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7668339Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7723414Z Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7773902Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7828543Z Downloading click_didyoumean-0.3.1-py3-none-any.whl (3.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7876957Z Downloading click_plugins-1.1.1.2-py2.py3-none-any.whl (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7927561Z Downloading click_repl-0.3.0-py3-none-any.whl (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.7977662Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8028530Z Downloading configobj-5.0.9-py2.py3-none-any.whl (35 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8084140Z Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (362 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8141476Z Downloading cryptography-49.0.0-cp311-abi3-manylinux_2_34_x86_64.whl (4.7 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8296161Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 345.9 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8327039Z Downloading cffi-2.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8383386Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8432320Z Downloading dictdiffer-0.10.0-py3-none-any.whl (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8482749Z Downloading diskcache-5.6.3-py3-none-any.whl (45 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8533814Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8584209Z Downloading dvc_http-2.32.0-py3-none-any.whl (12 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8634520Z Downloading fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.0 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8821667Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 298.1 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8853173Z Downloading fsspec-2026.6.0-py3-none-any.whl (203 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8907755Z Downloading funcy-2.0-py2.py3-none-any.whl (30 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.8960725Z Downloading greenlet-3.5.4-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9015454Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.5/621.5 kB 109.2 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9044264Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9096883Z Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (523 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9157868Z Downloading hydra_core-1.3.4-py3-none-any.whl (155 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9211053Z Downloading omegaconf-2.3.1-py3-none-any.whl (79 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9263781Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9312118Z Downloading iterative_telemetry-0.0.10-py3-none-any.whl (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9362626Z Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9421314Z Downloading kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9493131Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 248.6 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9525752Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9575898Z Downloading narwhals-2.24.0-py3-none-any.whl (461 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9636363Z Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9731596Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 261.3 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9763014Z Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:40.9978974Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 347.4 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0010738Z Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0071269Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0125150Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0189026Z Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0241113Z Downloading pydantic_settings-2.14.2-py3-none-any.whl (61 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0293085Z Downloading pydot-4.0.1-py3-none-any.whl (37 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0362663Z Downloading pygit2-1.19.3-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.8 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0572665Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.8/5.8 MB 301.0 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0605326Z Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0673574Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 204.4 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0704855Z Downloading pygtrie-2.5.0-py3-none-any.whl (25 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0758271Z Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0819104Z Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0872329Z Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.0940095Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1021989Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1077382Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1130349Z Downloading ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1200566Z Downloading semver-3.0.4-py3-none-any.whl (17 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1251853Z Downloading shortuuid-1.0.13-py3-none-any.whl (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1303114Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1354920Z Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1408801Z Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1465635Z Downloading tabulate-0.10.0-py3-none-any.whl (39 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1516856Z Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1569234Z Downloading tomlkit-0.15.1-py3-none-any.whl (49 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1619586Z Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1673254Z Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1742312Z Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1910955Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 292.6 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1942565Z Downloading voluptuous-0.16.0-py3-none-any.whl (31 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.1995189Z Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2055876Z Downloading wcwidth-0.8.2-py3-none-any.whl (323 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2114444Z Downloading websockets-16.1.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (187 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2167930Z Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2229282Z Downloading zc_lockfile-4.0-py3-none-any.whl (9.1 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2280986Z Downloading zipp-4.1.0-py3-none-any.whl (10 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2331297Z Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2413224Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 260.7 MB/s  0:00:00
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2445263Z Downloading multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (256 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2502511Z Downloading yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (109 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2557090Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2608839Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2669230Z Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2727123Z Downloading propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (61 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2777560Z Downloading appdirs-1.4.4-py2.py3-none-any.whl (9.6 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2827000Z Downloading atpublic-7.0.0-py3-none-any.whl (6.4 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2873588Z Downloading entrypoints-0.4-py3-none-any.whl (5.3 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2923689Z Downloading filelock-3.32.0-py3-none-any.whl (97 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.2975060Z Downloading mako-1.3.12-py3-none-any.whl (78 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.3029974Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.3062909Z Using cached setuptools-83.0.0-py3-none-any.whl (1.0 MB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.3095967Z Downloading tzlocal-5.4.4-py3-none-any.whl (18 kB)
+train-and-validate	Install dependencies	2026-07-27T08:49:41.6404554Z Building wheels for collected packages: antlr4-python3-runtime
+train-and-validate	Install dependencies	2026-07-27T08:49:41.6432675Z   Building wheel for antlr4-python3-runtime (pyproject.toml): started
+train-and-validate	Install dependencies	2026-07-27T08:49:41.9110616Z   Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
+train-and-validate	Install dependencies	2026-07-27T08:49:41.9117312Z   Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144589 sha256=2841f22d7820f2ae5ce0360681a6a52c7a9c5b495ec79349f7344729dce78838
+train-and-validate	Install dependencies	2026-07-27T08:49:41.9119060Z   Stored in directory: /home/runner/.cache/pip/wheels/1f/be/48/13754633f1d08d1fbfc60d5e80ae1e5d7329500477685286cd
+train-and-validate	Install dependencies	2026-07-27T08:49:41.9137024Z Successfully built antlr4-python3-runtime
+train-and-validate	Install dependencies	2026-07-27T08:49:42.2564427Z Installing collected packages: pytz, pygtrie, funcy, appdirs, antlr4-python3-runtime, zipp, websockets, wcwidth, voluptuous, vine, uvloop, urllib3, tzlocal, tzdata, typing-extensions, tqdm, tomlkit, threadpoolctl, tabulate, sqlparse, smmap, six, shtab, shortuuid, setuptools, semver, ruamel.yaml, PyYAML, python-dotenv, pyparsing, pygments, pycparser, pyasn1, pyarrow, psutil, protobuf, propcache, prometheus-client, pluggy, platformdirs, pillow, pathspec, packaging, orjson, numpy, networkx, narwhals, multidict, mdurl, markupsafe, markdown, kiwisolver, joblib, itsdangerous, iniconfig, idna, httptools, h11, greenlet, graphql-core, fsspec, frozenlist, fonttools, flatten-dict, filelock, entrypoints, dvc-render, dpath, distro, diskcache, dictdiffer, cycler, configobj, colorama, cloudpickle, click, charset_normalizer, certifi, cachetools, blinker, billiard, attrs, atpublic, annotated-types, annotated-doc, aiohappyeyeballs, zc.lockfile, yarl, werkzeug, uvicorn, typing-inspection, sqltrie, sqlalchemy, scipy, requests, python-dateutil, pytest, pydot, pydantic-core, pyasn1-modules, prompt-toolkit, opentelemetry-api, omegaconf, markdown-it-py, Mako, Jinja2, importlib_metadata, gunicorn, graphql-relay, grandalf, gitdb, flufl.lock, dvc-objects, dulwich, contourpy, click-plugins, click-didyoumean, cffi, anyio, amqp, aiosignal, watchfiles, starlette, scikit-learn, rich, pygit2, pydantic, pandas, opentelemetry-semantic-conventions, matplotlib, kombu, iterative-telemetry, hydra-core, graphene, gitpython, Flask, dvc-studio-client, dvc-data, docker, cryptography, click-repl, alembic, aiohttp, pydantic-settings, opentelemetry-sdk, google-auth, fastapi, celery, asyncssh, aiohttp-retry, scmrepo, dvc-task, dvc-http, databricks-sdk, mlflow-skinny, gto, mlflow, dvc
+train-and-validate	Install dependencies	2026-07-27T08:50:17.3460840Z 
+train-and-validate	Install dependencies	2026-07-27T08:50:17.3584723Z Successfully installed Flask-3.1.3 Jinja2-3.1.6 Mako-1.3.12 PyYAML-6.0.3 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiohttp-retry-2.9.1 aiosignal-1.4.0 alembic-1.18.5 amqp-5.3.1 annotated-doc-0.0.4 annotated-types-0.8.0 antlr4-python3-runtime-4.9.3 anyio-4.14.2 appdirs-1.4.4 asyncssh-2.24.0 atpublic-7.0.0 attrs-26.1.0 billiard-4.2.4 blinker-1.9.0 cachetools-5.5.2 celery-5.6.3 certifi-2026.7.22 cffi-2.1.0 charset_normalizer-3.4.9 click-8.4.2 click-didyoumean-0.3.1 click-plugins-1.1.1.2 click-repl-0.3.0 cloudpickle-3.1.2 colorama-0.4.6 configobj-5.0.9 contourpy-1.3.3 cryptography-49.0.0 cycler-0.12.1 databricks-sdk-0.122.0 dictdiffer-0.10.0 diskcache-5.6.3 distro-1.9.0 docker-7.2.0 dpath-2.2.0 dulwich-1.2.12 dvc-3.67.1 dvc-data-3.18.3 dvc-http-2.32.0 dvc-objects-5.2.0 dvc-render-1.0.2 dvc-studio-client-0.23.0 dvc-task-0.40.2 entrypoints-0.4 fastapi-0.140.0 filelock-3.32.0 flatten-dict-0.5.0 flufl.lock-9.1.0 fonttools-4.63.0 frozenlist-1.8.0 fsspec-2026.6.0 funcy-2.0 gitdb-4.0.12 gitpython-3.1.57 google-auth-2.56.2 grandalf-0.8 graphene-3.4.3 graphql-core-3.2.11 graphql-relay-3.2.0 greenlet-3.5.4 gto-1.10.1 gunicorn-23.0.0 h11-0.16.0 httptools-0.8.0 hydra-core-1.3.4 idna-3.18 importlib_metadata-8.9.0 iniconfig-2.3.0 iterative-telemetry-0.0.10 itsdangerous-2.2.0 joblib-1.5.3 kiwisolver-1.5.0 kombu-5.6.2 markdown-3.10.2 markdown-it-py-4.2.0 markupsafe-3.0.3 matplotlib-3.11.1 mdurl-0.1.2 mlflow-2.22.5 mlflow-skinny-2.22.5 multidict-6.7.1 narwhals-2.24.0 networkx-3.6.1 numpy-2.5.1 omegaconf-2.3.1 opentelemetry-api-1.44.0 opentelemetry-sdk-1.44.0 opentelemetry-semantic-conventions-0.65b0 orjson-3.11.9 packaging-24.2 pandas-2.3.3 pathspec-1.1.1 pillow-12.3.0 platformdirs-4.11.0 pluggy-1.6.0 prometheus-client-0.26.0 prompt-toolkit-3.0.53 propcache-0.5.2 protobuf-6.33.6 psutil-7.2.2 pyarrow-19.0.1 pyasn1-0.6.4 pyasn1-modules-0.4.2 pycparser-3.0 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.14.2 pydot-4.0.1 pygit2-1.19.3 pygments-2.20.0 pygtrie-2.5.0 pyparsing-3.3.2 pytest-9.1.1 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 pytz-2026.3.post1 requests-2.34.2 rich-15.0.0 ruamel.yaml-0.19.1 scikit-learn-1.9.0 scipy-1.18.0 scmrepo-3.6.2 semver-3.0.4 setuptools-83.0.0 shortuuid-1.0.13 shtab-1.8.1 six-1.17.0 smmap-5.0.3 sqlalchemy-2.0.51 sqlparse-0.5.5 sqltrie-0.11.2 starlette-1.3.1 tabulate-0.10.0 threadpoolctl-3.6.0 tomlkit-0.15.1 tqdm-4.69.1 typing-extensions-4.16.0 typing-inspection-0.4.2 tzdata-2026.3 tzlocal-5.4.4 urllib3-2.7.0 uvicorn-0.51.0 uvloop-0.22.1 vine-5.1.0 voluptuous-0.16.0 watchfiles-1.2.0 wcwidth-0.8.2 websockets-16.1.1 werkzeug-3.1.8 yarl-1.24.5 zc.lockfile-4.0 zipp-4.1.0
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	﻿2026-07-27T08:50:17.8319536Z ##[group]Run dvc repro dvc/dvc.yaml
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8319881Z ^[[36;1mdvc repro dvc/dvc.yaml^[[0m
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8365006Z shell: /usr/bin/bash -e {0}
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8365265Z env:
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8365536Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8365986Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8366413Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8366793Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8367177Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8367562Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:17.8367885Z ##[endgroup]
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.1109345Z Running stage 'dvc/dvc.yaml:generate_data':
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.1111140Z > python -m src.preprocessing.generate_data
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.6212429Z wrote 20000 rows -> /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform/data/raw/churn.csv (churn rate 0.362)
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.7285279Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.7519268Z Running stage 'dvc/dvc.yaml:preprocess':
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:19.7521061Z > python -m src.preprocessing.preprocess
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:21.2605399Z train=16000 test=4000 features=9
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:21.4581387Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:21.4870160Z Running stage 'dvc/dvc.yaml:train':
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:21.4872229Z > python -m src.training.train
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.1613583Z 2026/07/27 08:50:25 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.1717935Z 2026/07/27 08:50:25 INFO mlflow.store.db.utils: Updating database tables
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.1748808Z INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.1749914Z INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.1993949Z INFO  [alembic.runtime.migration] Running upgrade  -> 451aebb31d03, add metric step
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2175682Z INFO  [alembic.runtime.migration] Running upgrade 451aebb31d03 -> 90e64c465722, migrate user column to tags
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2234468Z INFO  [alembic.runtime.migration] Running upgrade 90e64c465722 -> 181f10493468, allow nulls for metric values
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2373297Z INFO  [alembic.runtime.migration] Running upgrade 181f10493468 -> df50e92ffc5e, Add Experiment Tags Table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2401263Z INFO  [alembic.runtime.migration] Running upgrade df50e92ffc5e -> 7ac759974ad8, Update run tags with larger limit
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2495494Z INFO  [alembic.runtime.migration] Running upgrade 7ac759974ad8 -> 89d4b8295536, create latest metrics table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2587720Z INFO  [89d4b8295536_create_latest_metrics_table_py] Migration complete!
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2600927Z INFO  [alembic.runtime.migration] Running upgrade 89d4b8295536 -> 2b4d017a5e9b, add model registry tables to db
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2603137Z INFO  [2b4d017a5e9b_add_model_registry_tables_to_db_py] Adding registered_models and model_versions tables to database.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2645282Z INFO  [2b4d017a5e9b_add_model_registry_tables_to_db_py] Migration complete!
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2657485Z INFO  [alembic.runtime.migration] Running upgrade 2b4d017a5e9b -> cfd24bdc0731, Update run status constraint with killed
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2765380Z INFO  [alembic.runtime.migration] Running upgrade cfd24bdc0731 -> 0a8213491aaa, drop_duplicate_killed_constraint
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2779981Z INFO  [alembic.runtime.migration] Running upgrade 0a8213491aaa -> 728d730b5ebd, add registered model tags table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2808546Z INFO  [alembic.runtime.migration] Running upgrade 728d730b5ebd -> 27a6a02d2cf1, add model version tags table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2839944Z INFO  [alembic.runtime.migration] Running upgrade 27a6a02d2cf1 -> 84291f40a231, add run_link to model_version
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2862709Z INFO  [alembic.runtime.migration] Running upgrade 84291f40a231 -> a8c4a736bde6, allow nulls for run_id
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.2948573Z INFO  [alembic.runtime.migration] Running upgrade a8c4a736bde6 -> 39d1c3be5f05, add_is_nan_constraint_for_metrics_tables_if_necessary
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3146299Z INFO  [alembic.runtime.migration] Running upgrade 39d1c3be5f05 -> c48cb773bb87, reset_default_value_for_is_nan_in_metrics_table_for_mysql
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3158276Z INFO  [alembic.runtime.migration] Running upgrade c48cb773bb87 -> bd07f7e963c5, create index on run_uuid
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3216526Z INFO  [alembic.runtime.migration] Running upgrade bd07f7e963c5 -> 0c779009ac13, add deleted_time field to runs table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3239817Z INFO  [alembic.runtime.migration] Running upgrade 0c779009ac13 -> cc1f77228345, change param value length to 500
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3348813Z INFO  [alembic.runtime.migration] Running upgrade cc1f77228345 -> 97727af70f4d, Add creation_time and last_update_time to experiments table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3382802Z INFO  [alembic.runtime.migration] Running upgrade 97727af70f4d -> 3500859a5d39, Add Model Aliases table
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3462782Z INFO  [alembic.runtime.migration] Running upgrade 3500859a5d39 -> 7f2a7d5fae7d, add datasets inputs input_tags tables
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3572332Z INFO  [alembic.runtime.migration] Running upgrade 7f2a7d5fae7d -> 2d6e25af4d3e, increase max param val length from 500 to 8000
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3676126Z INFO  [alembic.runtime.migration] Running upgrade 2d6e25af4d3e -> acf3f17fdcc7, add storage location field to model versions
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3699770Z INFO  [alembic.runtime.migration] Running upgrade acf3f17fdcc7 -> 867495a8f9d4, add trace tables
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3798784Z INFO  [alembic.runtime.migration] Running upgrade 867495a8f9d4 -> 5b0e9adcef9c, add cascade deletion to trace tables foreign keys
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3969371Z INFO  [alembic.runtime.migration] Running upgrade 5b0e9adcef9c -> 4465047574b1, increase max dataset schema size
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.3982356Z INFO  [alembic.runtime.migration] Running upgrade 4465047574b1 -> f5a4f2784254, increase run tag value limit to 8000
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.4083809Z INFO  [alembic.runtime.migration] Running upgrade f5a4f2784254 -> 0584bdc529eb, add cascading deletion to datasets from experiments
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.4301719Z INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:25.4302683Z INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:32.0058711Z /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:32.0063245Z   warnings.warn(
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:32.0626698Z /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:32.0629600Z   warnings.warn(
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.4834266Z Successfully registered model 'churn-classifier'.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.4921355Z Created version '1' of model 'churn-classifier'.
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5024754Z run_id=66be0eb69ec14ed0b94846e6dcc956ef
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5025241Z {
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5025608Z   "cv_roc_auc_mean": 0.8634709185927322,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5026093Z   "cv_roc_auc_std": 0.0026061596519509162,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5026524Z   "train_accuracy": 0.89175,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5026979Z   "train_f1": 0.8446358091137424,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5027414Z   "train_roc_auc": 0.9628316795206311
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:36.5027848Z }
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:37.2683895Z Updating lock file 'dvc/dvc.lock'
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:37.2775760Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:37.2984211Z Running stage 'dvc/dvc.yaml:evaluate':
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:37.2986062Z > python -m src.evaluation.evaluate
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2880603Z {
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2881359Z   "test_accuracy": 0.79625,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2881810Z   "test_precision": 0.7379518072289156,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2882168Z   "test_recall": 0.6772633033863165,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2882505Z   "test_f1": 0.7063063063063063,
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2882809Z   "test_roc_auc": 0.862513335125336
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2883108Z }
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.2883331Z quality gate passed
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7271811Z Updating lock file 'dvc/dvc.lock'
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7363806Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7364484Z To track the changes with git, run:
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7364910Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7365107Z 	git add dvc/dvc.lock
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7365416Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7365637Z To enable auto staging, run:
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7365947Z 
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7366088Z 	dvc config core.autostage true
+train-and-validate	Reproduce ML pipeline (training + evaluation gate)	2026-07-27T08:50:41.7376407Z Use `dvc push` to send your updates to remote storage.
+train-and-validate	Show metrics	﻿2026-07-27T08:50:41.8087832Z ##[group]Run cat reports/metrics.json
+train-and-validate	Show metrics	2026-07-27T08:50:41.8088182Z ^[[36;1mcat reports/metrics.json^[[0m
+train-and-validate	Show metrics	2026-07-27T08:50:41.8132295Z shell: /usr/bin/bash -e {0}
+train-and-validate	Show metrics	2026-07-27T08:50:41.8132540Z env:
+train-and-validate	Show metrics	2026-07-27T08:50:41.8132799Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Show metrics	2026-07-27T08:50:41.8133245Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+train-and-validate	Show metrics	2026-07-27T08:50:41.8133673Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Show metrics	2026-07-27T08:50:41.8134051Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Show metrics	2026-07-27T08:50:41.8134434Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Show metrics	2026-07-27T08:50:41.8134812Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+train-and-validate	Show metrics	2026-07-27T08:50:41.8135129Z ##[endgroup]
+train-and-validate	Show metrics	2026-07-27T08:50:41.8207016Z {
+train-and-validate	Show metrics	2026-07-27T08:50:41.8207391Z   "test_accuracy": 0.79625,
+train-and-validate	Show metrics	2026-07-27T08:50:41.8207821Z   "test_precision": 0.7379518072289156,
+train-and-validate	Show metrics	2026-07-27T08:50:41.8208234Z   "test_recall": 0.6772633033863165,
+train-and-validate	Show metrics	2026-07-27T08:50:41.8208545Z   "test_f1": 0.7063063063063063,
+train-and-validate	Show metrics	2026-07-27T08:50:41.8208806Z   "test_roc_auc": 0.862513335125336
+train-and-validate	Show metrics	2026-07-27T08:50:41.8209945Z }
+train-and-validate	Upload model + metrics artifacts	﻿2026-07-27T08:50:41.8267555Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8268833Z ##[group]Run actions/upload-artifact@v4
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8269102Z with:
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8269299Z   name: model-and-metrics
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8269689Z   path: models/model.pkl
+train-and-validate	Upload model + metrics artifacts	models/feature_names.json
+train-and-validate	Upload model + metrics artifacts	reports/metrics.json
+train-and-validate	Upload model + metrics artifacts	dvc/dvc.lock
+train-and-validate	Upload model + metrics artifacts	
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8270119Z   if-no-files-found: warn
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8270677Z   compression-level: 6
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8270912Z   overwrite: false
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8271134Z   include-hidden-files: false
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8271361Z env:
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8271606Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8272032Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8272497Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8272879Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8273250Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8273633Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.8273953Z ##[endgroup]
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9890481Z (node:2458) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9891445Z (Use `node --trace-deprecation ...` to show where the warning was created)
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9973811Z Multiple search paths detected. Calculating the least common ancestor of all paths
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9977757Z The least common ancestor is /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform. This will be the root directory of the artifact
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9979388Z With the provided path, there will be 4 files uploaded
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9981298Z Artifact name is valid!
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:41.9981993Z Root directory input is valid!
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:42.1968167Z Beginning upload of artifact content to blob storage
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.1797245Z (node:2458) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.5042601Z Uploaded bytes 8388608
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.5912350Z Uploaded bytes 9954584
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.6207489Z Finished uploading artifact content to blob storage!
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.6208790Z SHA256 digest of uploaded artifact zip is 66f5785679652b216721623fe4e0779844252ead76352976240e6823af1202c0
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.6211006Z Finalizing artifact upload
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.7812423Z Artifact model-and-metrics.zip successfully finalized. Artifact ID 8647129361
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.7813905Z Artifact model-and-metrics has been successfully uploaded! Final size is 9954584 bytes. Artifact ID is 8647129361
+train-and-validate	Upload model + metrics artifacts	2026-07-27T08:50:43.7821129Z Artifact download URL: https://github.com/senthoorneethirajan/enterprise-mlops-platform/actions/runs/30251369242/artifacts/8647129361
+train-and-validate	Post Run actions/setup-python@v5	﻿2026-07-27T08:50:43.8016052Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:43.8017295Z Post job cleanup.
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:43.9204167Z (node:2470) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:43.9205014Z (Use `node --trace-deprecation ...` to show where the warning was created)
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:43.9439479Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform --files-from manifest.txt --use-compress-program zstdmt
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:44.5517122Z (node:2470) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:45.5431365Z Sent 29355964 of 230682556 (12.7%), 28.0 MBs/sec
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:46.2592592Z Sent 230682556 of 230682556 (100.0%), 127.8 MBs/sec
+train-and-validate	Post Run actions/setup-python@v5	2026-07-27T08:50:46.3941004Z Cache saved with the key: setup-python-Linux-x64-24.04-Ubuntu-python-3.12.13-pip-537c3a2ef8360d76798510e8f2aa2a344113432510d3538eb581a4259dd61387
+train-and-validate	Post Run actions/checkout@v4	﻿2026-07-27T08:50:46.4192945Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.4195202Z Post job cleanup.
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5050495Z [command]/usr/bin/git version
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5093544Z git version 2.54.0
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5132283Z Temporarily overriding HOME='/home/runner/work/_temp/7cb1a0da-35b5-43fa-bbe1-ce1885d00015' before making global git config changes
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5133742Z Adding repository directory to the temporary git global config as a safe directory
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5137997Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enterprise-mlops-platform/enterprise-mlops-platform
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5176418Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5210991Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5499451Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5524425Z http.https://github.com/.extraheader
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5537024Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5571469Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5861025Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+train-and-validate	Post Run actions/checkout@v4	2026-07-27T08:50:46.5896792Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+train-and-validate	Complete job	﻿2026-07-27T08:50:46.6294174Z Cleaning up orphan processes
+train-and-validate	Complete job	2026-07-27T08:50:46.6530077Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
