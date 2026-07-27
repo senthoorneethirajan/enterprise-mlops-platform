@@ -1,0 +1,49 @@
+# CI pipeline for ML training (Task 2).
+#
+# Triggered on every push/PR: installs the pinned environment, reproduces the DVC
+# pipeline (data -> preprocess -> train -> evaluate), enforces the evaluation quality
+# gate (evaluate exits non-zero below thresholds -> job fails), and uploads the model
+# + metrics as build artifacts.
+#
+# Security (spec section 6): no credentials are committed; anything sensitive (e.g. a
+# remote MLflow tracking URI or DVC remote keys) belongs in GitHub Actions Secrets and
+# is injected via `env:` — e.g. MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+name: ml-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  train-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Reproduce ML pipeline (training + evaluation gate)
+        run: dvc repro dvc/dvc.yaml
+
+      - name: Show metrics
+        run: cat reports/metrics.json
+
+      - name: Upload model + metrics artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-and-metrics
+          path: |
+            models/model.pkl
+            models/feature_names.json
+            reports/metrics.json
+            dvc/dvc.lock

@@ -1,0 +1,13 @@
+# Top-level dependencies. requirements.lock.txt (pip freeze) pins the exact resolved
+# versions used for reproducible installs — regenerate it after changing this file.
+numpy>=1.26,<3
+pandas>=2.2,<3
+scikit-learn>=1.4,<2
+mlflow>=2.14,<3
+dvc>=3.48,<4
+PyYAML>=6.0
+joblib>=1.3
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+prometheus-client>=0.20
+pytest>=8.0

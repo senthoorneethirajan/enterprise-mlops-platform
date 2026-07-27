@@ -1,0 +1,57 @@
+# DVC pipeline for the churn model lifecycle (Task 1: reproducible training).
+#
+# Lives in dvc/ per the spec's repository layout; every stage runs from the repo root
+# via `wdir: ..`, so all paths below are root-relative.
+#
+# Run with:            dvc repro dvc/dvc.yaml
+# Show pipeline DAG:   dvc dag dvc/dvc.yaml
+stages:
+  generate_data:
+    wdir: ..
+    cmd: python -m src.preprocessing.generate_data
+    deps:
+      - src/preprocessing/generate_data.py
+    params:
+      - data
+    outs:
+      - data/raw/churn.csv
+
+  preprocess:
+    wdir: ..
+    cmd: python -m src.preprocessing.preprocess
+    deps:
+      - src/preprocessing/preprocess.py
+      - data/raw/churn.csv
+    params:
+      - preprocess
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+
+  train:
+    wdir: ..
+    cmd: python -m src.training.train
+    deps:
+      - src/training/train.py
+      - src/common/tracking.py
+      - data/processed/train.csv
+    params:
+      - train
+    outs:
+      - models/model.pkl
+      - models/feature_names.json
+      - models/run_id.txt:
+          cache: false
+
+  evaluate:
+    wdir: ..
+    cmd: python -m src.evaluation.evaluate
+    deps:
+      - src/evaluation/evaluate.py
+      - models/model.pkl
+      - data/processed/test.csv
+    params:
+      - evaluate
+    metrics:
+      - reports/metrics.json:
+          cache: false

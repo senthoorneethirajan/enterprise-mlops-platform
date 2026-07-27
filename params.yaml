@@ -1,0 +1,20 @@
+# Central pipeline parameters — tracked by DVC so any change re-triggers the right stages.
+data:
+  n_samples: 20000
+  seed: 42
+
+preprocess:
+  test_size: 0.2
+  seed: 42
+
+train:
+  n_estimators: 300
+  max_depth: 12
+  min_samples_leaf: 2
+  seed: 42
+
+evaluate:
+  # Quality gate: evaluation fails (non-zero exit) below these thresholds.
+  # This is what blocks bad models in CI (Task 2) and canary promotion (Task 4).
+  min_roc_auc: 0.80
+  min_f1: 0.60

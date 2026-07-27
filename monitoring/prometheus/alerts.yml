@@ -1,0 +1,41 @@
+# Alert rules covering the spec's observability expectations:
+# latency, error rate, drift indicators, deployment health.
+groups:
+  - name: churn-serving
+    rules:
+      - alert: HighErrorRate
+        expr: |
+          sum(rate(inference_requests_total{status=~"5.."}[5m]))
+            / sum(rate(inference_requests_total[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: page
+        annotations:
+          summary: ">5% of inference requests are failing"
+
+      - alert: HighLatencyP95
+        expr: |
+          histogram_quantile(0.95, sum(rate(inference_latency_seconds_bucket[5m])) by (le)) > 0.5
+        for: 10m
+        labels:
+          severity: warn
+        annotations:
+          summary: "p95 inference latency above 500ms"
+
+      - alert: ServingDown
+        expr: up{job=~"churn-serving.*"} == 0
+        for: 2m
+        labels:
+          severity: page
+        annotations:
+          summary: "churn-serving target down (deployment health)"
+
+      - alert: DataDriftDetected
+        # drift_psi gauge is exported by the Phase 3 drift detector (Task 6);
+        # PSI > 0.2 is the conventional "significant shift" threshold.
+        expr: max(drift_psi) > 0.2
+        for: 15m
+        labels:
+          severity: warn
+        annotations:
+          summary: "Feature drift PSI above 0.2 — retraining pipeline should trigger"

@@ -1,0 +1,104 @@
+schema: '2.0'
+stages:
+  generate_data:
+    cmd: python -m src.preprocessing.generate_data
+    deps:
+    - path: src/preprocessing/generate_data.py
+      hash: md5
+      md5: 4ba4b0868ef97141d1a83b0bc4fc7740
+      size: 2637
+    params:
+      params.yaml:
+        data:
+          n_samples: 20000
+          seed: 42
+    outs:
+    - path: data/raw/churn.csv
+      hash: md5
+      md5: 189db4696d23d060d9d79a5469d110aa
+      size: 630128
+  preprocess:
+    cmd: python -m src.preprocessing.preprocess
+    deps:
+    - path: data/raw/churn.csv
+      hash: md5
+      md5: 189db4696d23d060d9d79a5469d110aa
+      size: 630128
+    - path: src/preprocessing/preprocess.py
+      hash: md5
+      md5: bbe7423aad3797680ca6d793d38b4043
+      size: 1402
+    params:
+      params.yaml:
+        preprocess:
+          test_size: 0.2
+          seed: 42
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: f445b322a156ecaf1fecfc6afd761159
+      size: 142175
+    - path: data/processed/train.csv
+      hash: md5
+      md5: c92e2b05b0427c364051cef1300e6ed9
+      size: 568108
+  train:
+    cmd: python -m src.training.train
+    deps:
+    - path: data/processed/train.csv
+      hash: md5
+      md5: c92e2b05b0427c364051cef1300e6ed9
+      size: 568108
+    - path: src/common/tracking.py
+      hash: md5
+      md5: bbbc7308d3d18d75c5b56d90cdba2b26
+      size: 1284
+    - path: src/training/train.py
+      hash: md5
+      md5: 64d9c0c75988020d4c23c8ff52ea43e9
+      size: 3008
+    params:
+      params.yaml:
+        train:
+          n_estimators: 300
+          max_depth: 12
+          min_samples_leaf: 2
+          seed: 42
+    outs:
+    - path: models/feature_names.json
+      hash: md5
+      md5: 44be1d833d2860d7489c5b58cfc76e59
+      size: 157
+    - path: models/model.pkl
+      hash: md5
+      md5: cd517d60c2ae373f648c8f42494e3706
+      size: 44778505
+    - path: models/run_id.txt
+      hash: md5
+      md5: b625a587b4472dd6586141813b031c20
+      size: 32
+  evaluate:
+    cmd: python -m src.evaluation.evaluate
+    deps:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: f445b322a156ecaf1fecfc6afd761159
+      size: 142175
+    - path: models/model.pkl
+      hash: md5
+      md5: cd517d60c2ae373f648c8f42494e3706
+      size: 44778505
+    - path: src/evaluation/evaluate.py
+      hash: md5
+      md5: 359d803380aac8fa6d7593e35b937f80
+      size: 2395
+    params:
+      params.yaml:
+        evaluate:
+          min_roc_auc: 0.8
+          min_f1: 0.6
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: 8e1c9a8058379957a48b7298d942776f
+      size: 176

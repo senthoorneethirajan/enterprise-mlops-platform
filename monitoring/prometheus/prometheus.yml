@@ -1,0 +1,20 @@
+# Prometheus scrape config (Task 5: production monitoring).
+# Local dev: run the API with `make serve`, then point a Prometheus container here.
+# On Kubernetes the pod annotations (prometheus.io/scrape) drive discovery instead.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - alerts.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["alertmanager:9093"]
+
+scrape_configs:
+  - job_name: churn-serving-local
+    static_configs:
+      # host.docker.internal reaches the host from a Prometheus container on macOS
+      - targets: ["host.docker.internal:8000"]

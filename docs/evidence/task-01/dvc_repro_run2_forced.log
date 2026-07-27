@@ -1,0 +1,46 @@
+Running stage 'dvc/dvc.yaml:generate_data':
+> python -m src.preprocessing.generate_data
+wrote 20000 rows -> /Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/data/raw/churn.csv (churn rate 0.362)
+
+Running stage 'dvc/dvc.yaml:preprocess':
+> python -m src.preprocessing.preprocess
+train=16000 test=4000 features=9
+
+Running stage 'dvc/dvc.yaml:train':
+> python -m src.training.train
+/Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/.venv/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+/Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/.venv/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+Registered model 'churn-classifier' already exists. Creating a new version of this model...
+Created version '2' of model 'churn-classifier'.
+run_id=a2d4f8b981d84228be0cb97f10cdbbb9
+{
+  "cv_roc_auc_mean": 0.8636114549631438,
+  "cv_roc_auc_std": 0.0025690486407184154,
+  "train_accuracy": 0.8921875,
+  "train_f1": 0.8453885453078784,
+  "train_roc_auc": 0.9628423889019275
+}
+Updating lock file 'dvc/dvc.lock'
+
+Running stage 'dvc/dvc.yaml:evaluate':
+> python -m src.evaluation.evaluate
+{
+  "test_accuracy": 0.7945,
+  "test_precision": 0.734785875281743,
+  "test_recall": 0.6758811333794057,
+  "test_f1": 0.7041036717062635,
+  "test_roc_auc": 0.8625157713826923
+}
+quality gate passed
+
+To track the changes with git, run:
+
+	git add dvc/dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.
+DVC_EXIT=0

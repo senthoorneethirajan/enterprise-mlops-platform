@@ -1,0 +1,88 @@
+{
+  "experiments": [
+    {
+      "name": "churn-training",
+      "artifact_location": "file:///Users/senthooa/Desktop/SKILLFY%20PROJECT/enterprise-mlops-platform/mlflow/experiments/churn-training",
+      "runs": [
+        {
+          "run_id": "3e147dea5a1a4d3896ae2ea1e2e3da5c",
+          "status": "FINISHED",
+          "params": {
+            "n_estimators": "300",
+            "max_depth": "12",
+            "min_samples_leaf": "2",
+            "seed": "42",
+            "n_train_rows": "16000"
+          },
+          "metrics": {
+            "cv_roc_auc_mean": 0.863611,
+            "cv_roc_auc_std": 0.002569,
+            "train_accuracy": 0.892188,
+            "train_f1": 0.845389,
+            "train_roc_auc": 0.962842,
+            "test_accuracy": 0.7945,
+            "test_precision": 0.734786,
+            "test_recall": 0.675881,
+            "test_f1": 0.704104,
+            "test_roc_auc": 0.862516
+          },
+          "artifacts": [
+            "dvc.lock",
+            "model",
+            "params.yaml"
+          ]
+        },
+        {
+          "run_id": "a2d4f8b981d84228be0cb97f10cdbbb9",
+          "status": "FINISHED",
+          "params": {
+            "n_estimators": "300",
+            "max_depth": "12",
+            "min_samples_leaf": "2",
+            "seed": "42",
+            "n_train_rows": "16000"
+          },
+          "metrics": {
+            "cv_roc_auc_mean": 0.863611,
+            "cv_roc_auc_std": 0.002569,
+            "train_accuracy": 0.892188,
+            "train_f1": 0.845389,
+            "train_roc_auc": 0.962842,
+            "test_accuracy": 0.7945,
+            "test_precision": 0.734786,
+            "test_recall": 0.675881,
+            "test_f1": 0.704104,
+            "test_roc_auc": 0.862516
+          },
+          "artifacts": [
+            "dvc.lock",
+            "model",
+            "params.yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default",
+      "artifact_location": "/Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/mlruns/0",
+      "runs": []
+    }
+  ],
+  "registered_models": [
+    {
+      "name": "churn-classifier",
+      "versions": [
+        {
+          "version": 1,
+          "run_id": "3e147dea5a1a4d3896ae2ea1e2e3da5c",
+          "status": "READY"
+        },
+        {
+          "version": 2,
+          "run_id": "a2d4f8b981d84228be0cb97f10cdbbb9",
+          "status": "READY"
+        }
+      ]
+    }
+  ]
+}

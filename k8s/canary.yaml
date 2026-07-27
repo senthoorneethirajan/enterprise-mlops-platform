@@ -1,0 +1,65 @@
+# Canary track (Task 4: safe deployment strategy).
+#
+# Rollout procedure:
+#   1. Build new image (e.g. churn-serving:v2), update the image + MODEL_VERSION below.
+#   2. kubectl apply -f k8s/canary.yaml       -> ~25% of traffic hits the canary
+#      (3 stable replicas : 1 canary replica behind the shared Service)
+#   3. Watch health: readiness probe failures / error-rate & latency alerts (Task 5).
+#   4a. HEALTHY  -> promote: set stable Deployment to the new image, then delete canary.
+#   4b. UNHEALTHY -> rollback: kubectl delete -f k8s/canary.yaml, and roll the MLflow
+#       registry alias back to the previous version (registry rollback, Task 8).
+#
+# Blue/green variant: scale canary to the full replica count, then flip the Service
+# selector to track=canary (green), keeping track=stable (blue) warm for instant rollback.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: churn-serving-canary
+  labels:
+    app: churn-serving
+    track: canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: churn-serving
+      track: canary
+  template:
+    metadata:
+      labels:
+        app: churn-serving
+        track: canary
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: api
+          image: churn-serving:v2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MODEL_VERSION
+              value: "v2"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi

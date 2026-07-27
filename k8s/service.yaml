@@ -1,0 +1,16 @@
+# Fronts BOTH stable and canary pods (selector has no `track` label), so the traffic
+# split follows replica counts — e.g. 3 stable : 1 canary = 25% canary traffic.
+apiVersion: v1
+kind: Service
+metadata:
+  name: churn-serving
+  labels:
+    app: churn-serving
+spec:
+  type: ClusterIP
+  selector:
+    app: churn-serving
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000

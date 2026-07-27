@@ -1,0 +1,14 @@
+# Environments
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# MLflow local store (runs DB + artifacts are local state; curated evidence
+# goes to docs/evidence/ instead)
+mlflow/mlflow.db
+mlflow/experiments/
+mlruns/
+
+# DVC adds per-directory .gitignore entries for pipeline outputs (data/, models/)
