@@ -56,21 +56,23 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 - Evidence → `docs/evidence/task-02..04/` (CI run logs, endpoint responses, rollback logs)
 
 ### Phase 3 — Monitoring & Drift (Tasks 5-6)
-- [ ] Task 5: `/metrics` endpoint (prometheus_client) with request count, latency histogram,
-      error counter; `monitoring/prometheus/prometheus.yml` scrape config +
-      `monitoring/prometheus/alerts.yml`; Grafana dashboard JSON (latency, error rate, drift,
-      deployment health panels)
-- [ ] Task 6: drift detector (PSI/KS on feature distributions) → alert → retraining pipeline
-      (Airflow DAG in `airflow/dags/`) → evaluation → registry promotion (alias update)
-- Evidence → `docs/evidence/task-05..06/` (dashboard screenshots, alert config, retraining
-      logs, registry version history)
+- [x] Task 5: Prometheus (+RBAC pod discovery) + Pushgateway + Grafana deployed on k3s;
+      provisioned 4-panel dashboard (latency p50/p95, error rate, drift PSI, deployment
+      health + canary split); 4 alert rules loaded; verified under live traffic —
+      COMPLETE 2026-07-28 (dashboard screenshots for submission: see task-05 README)
+- [x] Task 6: PSI drift detector -> Pushgateway -> DataDriftDetected alert; drift-gated
+      retraining orchestrator (+ Airflow DAG); gated registry promotion + rollback via
+      `production` alias — COMPLETE 2026-07-28
+- Evidence → `docs/evidence/task-05..06/` (live-stack proof, baseline no-drift run,
+      rollback demo)
 
-### Phase 4 — LLM Integration (Task 7)
-- [ ] RAG pipeline over project/ops docs (`llm/rag/`)
-- [ ] Agent workflow (`llm/agents/`) — e.g. incident-triage agent that reads metrics/drift
-      reports and recommends actions
-- [ ] Prompt management (versioned prompt templates)
-- [ ] Evaluation with RAGAS/TruLens (`llm/evaluation/`), results logged to MLflow
+### Phase 4 — LLM Integration (Task 7) — COMPLETE 2026-07-28
+- [x] RAG pipeline over the platform's own ops docs (`llm/rag/`, local Ollama stack)
+- [x] Incident-triage agent with tool-based state gathering (`llm/agents/`) — correct
+      decisions on drift-incident vs healthy snapshots
+- [x] Prompt management: versioned prompt files, version logged per run
+- [x] RAGAS-methodology evaluation with local LLM judge, logged to MLflow
+      (faithfulness 0.90 / relevancy 0.90 / correctness 0.88 / context 0.845)
 - Evidence → `docs/evidence/task-07/`
 
 ### Phase 5 — Failure & Incident Simulation (Tasks 8-9)
@@ -78,8 +80,9 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
       detected → automated rollback in <90s, stable v2 untouched; RCA written including
       a real finding (readiness-based guard masked crash-looping pod during rolling
       update; fixed with rollout gate) — COMPLETE 2026-07-28, `docs/evidence/task-08/`
-- [ ] Task 9: simulate data drift (shifted generator params) → drift alert fires → retraining
-      triggered → validation report
+- [x] Task 9: drift 1.2 injected -> PSI > 0.2 on 3 features -> DataDriftDetected FIRING
+      in Prometheus -> automated retraining (gate passed) -> production alias v3 -> v4 —
+      COMPLETE 2026-07-28
 - Evidence → `docs/evidence/task-08..09/`
 
 ## Milestone order
@@ -97,5 +100,5 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 - ~~Docker Desktop~~ — resolved with **Colima** (docker engine + k3s Kubernetes,
   no licensing concerns on a corporate machine): `colima start --cpu 4 --memory 8 --kubernetes`
 - ~~GitHub remote repo~~ — live at github.com/senthoorneethirajan/enterprise-mlops-platform
-- **LLM access** (OpenAI/Bedrock/local Ollama) — required for Task 7 (RAGAS also needs an
-  LLM as judge). STILL OPEN.
+- ~~LLM access~~ — resolved with local **Ollama** (answerer llama3.2:latest, judge
+  llama3.1:latest, embeddings nomic-embed-text); no hosted-API credentials needed.

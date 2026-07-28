@@ -1,0 +1,94 @@
+{
+  "chat_model": "llama3.2:latest",
+  "embed_model": "nomic-embed-text",
+  "judge_model": "llama3.1:latest",
+  "n_cases": 5,
+  "aggregate": {
+    "faithfulness": 0.9,
+    "answer_relevancy": 0.9,
+    "answer_correctness": 0.88,
+    "context_relevancy": 0.845
+  },
+  "results": [
+    {
+      "question": "What is the PSI threshold for declaring data drift, and what happens when it is exceeded?",
+      "answer": "The PSI (Performance Score Index) threshold for declaring data drift is 0.2. When this threshold is exceeded, the detector will push `drift_psi` to the Pushgateway, Prometheus will scrape it, and the `DataDriftDetected` alert will be fired.",
+      "retrieved_sources": [
+        "docs/evidence/task-06/README.md",
+        "docs/evidence/task-09/README.md",
+        "docs/evidence/task-09/README.md",
+        "docs/evidence/task-06/README.md"
+      ],
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "answer_correctness": 0.9,
+        "context_relevancy": 0.875
+      }
+    },
+    {
+      "question": "How does the platform roll back a bad model deployment?",
+      "answer": "The platform rolls back a bad model deployment by executing an automated rollback after detecting failure. This is achieved through the `scripts/canary_guard.sh` script, which gates on rollout completion and steady-state readiness. On failure, it deletes the canary and exits non-zero.",
+      "retrieved_sources": [
+        "docs/evidence/task-08/RCA.md",
+        "docs/evidence/task-04/README.md",
+        "docs/PROJECT_SPEC.md",
+        "docs/evidence/task-08/RCA.md"
+      ],
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "answer_correctness": 0.9,
+        "context_relevancy": 0.875
+      }
+    },
+    {
+      "question": "What does the CI pipeline do on every push?",
+      "answer": "On every push, the CI pipeline triggers automatically and runs the `train-and-validate` job. This job performs data generation, preprocessing, training with MLflow tracking, model registration (`churn-classifier` version 1), and uploads the `model-and-metrics` artifact (model.pkl, feature_names.json, metrics.json, dvc.lock).",
+      "retrieved_sources": [
+        "docs/evidence/task-02/README.md",
+        "docs/PROJECT_OUTLINE.md",
+        "docs/evidence/task-02/README.md",
+        "docs/PROJECT_SPEC.md"
+      ],
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "answer_correctness": 0.9,
+        "context_relevancy": 0.85
+      }
+    },
+    {
+      "question": "Which metrics must the Grafana dashboards include according to the spec?",
+      "answer": "According to the specification, the Grafana dashboards must include:\n\n1. Model latency (p50/p95 from `inference_latency_seconds`)\n2. Error rate (`inference_requests_total{status=~\"5..\"}` vs total)\n3. Drift indicators (`drift_psi` per feature, from the Task 6 drift detector)\n4. Deployment health (`up`, ready replicas, stable vs canary request split by `model_version` label)",
+      "retrieved_sources": [
+        "monitoring/grafana/README.md",
+        "docs/evidence/task-05/README.md",
+        "docs/evidence/task-05/README.md",
+        "docs/PROJECT_SPEC.md"
+      ],
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "answer_correctness": 0.9,
+        "context_relevancy": 0.825
+      }
+    },
+    {
+      "question": "Why was the canary guard changed after the first failure drill?",
+      "answer": "The canary guard was changed to run a rollout gate first (`kubectl rollout status --timeout`) instead of polling readiness at the Deployment level. This is because during the initial drill, it was discovered that health was measured at the wrong level (Deployment) and not at the rollout level, which led to the guard reporting \"safe to promote\" while the new version was failing. The new implementation fixes this issue by running a rollout gate first, which fails when the new ReplicaSet never becomes fully available, then falls through to steady-state readiness polling.",
+      "retrieved_sources": [
+        "docs/evidence/task-08/RCA.md",
+        "docs/evidence/task-08/RCA.md",
+        "docs/evidence/task-08/RCA.md",
+        "docs/evidence/task-04/README.md"
+      ],
+      "scores": {
+        "faithfulness": 0.9,
+        "answer_relevancy": 0.9,
+        "answer_correctness": 0.8,
+        "context_relevancy": 0.8
+      }
+    }
+  ]
+}

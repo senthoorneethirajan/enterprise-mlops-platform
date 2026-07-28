@@ -51,6 +51,9 @@ map one-to-one to the platform components.
 | --- | --- | --- |
 | 1 ML Lifecycle Foundation | 1 Experiment tracking & versioning | Done (evidence in docs/evidence/task-01) |
 | 2 CI/CD for ML | 2 CI pipeline / 3 Packaging & K8s deploy / 4 Canary + blue/green + auto-rollback | Done (evidence task-02..04) |
-| 3 Monitoring & Drift | 5 Monitoring / 6 Drift & retraining | Scaffolded |
-| 4 LLM Integration | 7 LLM pipeline | Planned |
-| 5 Failure & Incident Simulation | 8 Deployment failure: Done (RCA in task-08) / 9 Drift incident | In progress |
+| 3 Monitoring & Drift | 5 Prometheus + Grafana / 6 Drift detection & gated retraining | Done (evidence task-05..06) |
+| 4 LLM Integration | 7 RAG + triage agent + RAGAS-style eval (local Ollama) | Done (evidence task-07) |
+| 5 Failure & Incident Simulation | 8 Deployment failure + RCA / 9 Drift incident closed loop | Done (evidence task-08..09) |
+
+All 9 tasks complete. Remaining manual step for submission: Grafana dashboard
+screenshots (instructions in `docs/evidence/task-05/README.md`).

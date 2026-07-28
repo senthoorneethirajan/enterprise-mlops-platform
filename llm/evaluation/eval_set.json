@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the PSI threshold for declaring data drift, and what happens when it is exceeded?",
+    "ground_truth": "PSI above 0.2 means significant shift; the DataDriftDetected alert fires and the retraining pipeline is triggered automatically, followed by registry promotion."
+  },
+  {
+    "question": "How does the platform roll back a bad model deployment?",
+    "ground_truth": "Rollback happens at two levels: the canary guard deletes the failing canary deployment so traffic reverts to the stable track, and the MLflow registry production alias can be moved back to a previous model version."
+  },
+  {
+    "question": "What does the CI pipeline do on every push?",
+    "ground_truth": "It installs the pinned environment, reproduces the DVC pipeline (data generation, preprocessing, training, evaluation), enforces the evaluation quality gate, and uploads the model and metrics as artifacts."
+  },
+  {
+    "question": "Which metrics must the Grafana dashboards include according to the spec?",
+    "ground_truth": "Model latency, error rate, drift indicators, and deployment health."
+  },
+  {
+    "question": "Why was the canary guard changed after the first failure drill?",
+    "ground_truth": "The original guard polled deployment readiness, which the old healthy pod kept satisfied during a rolling update, masking the crash-looping new pod. It was fixed to gate on rollout completion first."
+  }
+]

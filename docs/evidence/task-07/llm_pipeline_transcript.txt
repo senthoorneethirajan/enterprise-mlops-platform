@@ -1,0 +1,121 @@
+=== RAG sample Q&A (grounded, with sources) ===
+{
+  "question": "What is the rollback procedure for a bad deployment?",
+  "answer": "The guard deletes the canary Deployment, and then `ROLLBACK COMPLETE` is signaled when 100% traffic is on the stable track.",
+  "contexts": [
+    {
+      "source": "docs/evidence/task-08/RCA.md",
+      "section": "Summary",
+      "text": "## Summary\n\nA deliberately faulty model version (`v3-bad`, injected via `SIMULATE_UNHEALTHY=1`,\ncausing `/health` to return 503) was deployed to the canary track. The canary guard\ndetected the failed rollout and executed an automated rollback. Customer traffic was\nserved by the stable track (v2) throughout \u2014 0% error rate on the service.",
+      "score": 0.7234
+    },
+    {
+      "source": "docs/evidence/task-08/RCA.md",
+      "section": "Timeline (from failure_drill.log)",
+      "text": "## Timeline (from failure_drill.log)\n\n1. `kubectl apply -f k8s/canary.yaml` + failure env injected \u2014 bad pod enters\n   CrashLoop/NotReady (readiness probe fails on 503)\n2. Canary guard rollout gate: `rollout status` times out (75s) \u2014 rollout stuck\n3. `ROLLBACK TRIGGERED` \u2014 guard deletes the canary Deployment\n4. `ROLLBACK COMPLETE` \u2014 100% traffic on stable; service `/health` confirms v2 OK\n5. Guard exits 1, signalling the failed rollout to the orchestrating pipeline",
+      "score": 0.7048
+    },
+    {
+      "source": "docs/evidence/task-08/RCA.md",
+      "section": "What the first drill attempt exposed (real finding)",
+      "text": "## What the first drill attempt exposed (real finding)\n\nThe initial guard implementation polled `readyReplicas >= spec.replicas`. During a\n**rolling update**, Kubernetes keeps the old healthy canary pod running while the new\nbad pod crash-loops \u2014 so `readyReplicas` stayed 1/1 and the guard reported *healthy*\nwhile the new version was failing (see the first drill attempt, where the guard\nconcluded \"safe to promote\").\n\n**Root cause:** health was measured at the Deployment level, not the rollout level \u2014\nthe metric answered \"is something ready?\" instead of \"did the new version become ready?\"\n\n**Fix:** the guard now runs a rollout gate first (`kubectl rollout status --timeout`),\nwhich fails when the new ReplicaSet never becomes fully available, then falls through\nto steady-state readiness polling. Re-run of the drill: detection + rollback in <90s.",
+      "score": 0.6787
+    },
+    {
+      "source": "docs/evidence/task-08/RCA.md",
+      "section": "Action items",
+      "text": "## Action items\n\n- [x] Guard gates on rollout completion, not raw readiness (scripts/canary_guard.sh)\n- [x] Drill re-run green (failure_drill.log)\n- [ ] Alert on `kube_deployment_status_replicas_unavailable` for the canary track\n      when the monitoring stack lands (Task 5)\n- [ ] Registry-level rollback (alias reassignment) tooling arrives with Task 6\n      promotion scripts",
+      "score": 0.6738
+    }
+  ]
+}
+
+=== Triage agent — Scenario A: drift incident snapshot ===
+{
+  "state": {
+    "evaluation_metrics": {
+      "test_accuracy": 0.779,
+      "test_precision": 0.7974738675958188,
+      "test_recall": 0.8137777777777778,
+      "test_f1": 0.805543334799824,
+      "test_roc_auc": 0.8585668571428571
+    },
+    "drift_report": {
+      "psi": {
+        "tenure_months": 0.0006,
+        "monthly_charges": 0.5874,
+        "total_charges": 0.1179,
+        "num_support_tickets": 0.624,
+        "payment_delay_days": 0.3539,
+        "data_usage_gb": 0.0011,
+        "contract_type": 0.0002
+      },
+      "max_psi": 0.624,
+      "drifted_features": [
+        "monthly_charges",
+        "num_support_tickets",
+        "payment_delay_days"
+      ],
+      "drift_detected": true
+    },
+    "registry": {
+      "production_alias": 4,
+      "alias_name": "production",
+      "versions": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "decision": {
+    "action": "retrain",
+    "confidence": 0.8,
+    "reasoning": "PSI values for 'monthly_charges', 'num_support_tickets', and 'payment_delay_days' are above the threshold of 0.2, indicating data drift detected. With a test accuracy of 0.779, it's recommended to retrain the model to adapt to the changing data distribution."
+  },
+  "prompt_version": "v1"
+}
+
+=== Triage agent — Scenario B: current healthy state ===
+{
+  "state": {
+    "evaluation_metrics": {
+      "test_accuracy": 0.779,
+      "test_precision": 0.7974738675958188,
+      "test_recall": 0.8137777777777778,
+      "test_f1": 0.805543334799824,
+      "test_roc_auc": 0.8585668571428571
+    },
+    "drift_report": {
+      "psi": {
+        "tenure_months": 0.0004,
+        "monthly_charges": 0.0005,
+        "total_charges": 0.0005,
+        "num_support_tickets": 0.0004,
+        "payment_delay_days": 0.0007,
+        "data_usage_gb": 0.0005,
+        "contract_type": 0.0002
+      },
+      "max_psi": 0.0007,
+      "drifted_features": [],
+      "drift_detected": false
+    },
+    "registry": {
+      "production_alias": 4,
+      "alias_name": "production",
+      "versions": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "decision": {
+    "action": "no_action",
+    "confidence": 0.8,
+    "reasoning": "No data drift detected (max_psi = 0.0007) and the current production model has a high test accuracy (0.779), indicating that the system is healthy."
+  },
+  "prompt_version": "v1"
+}
