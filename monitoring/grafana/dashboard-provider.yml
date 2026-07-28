@@ -1,0 +1,9 @@
+# Grafana dashboard provisioning — loads JSON dashboards from the mounted ConfigMap.
+apiVersion: 1
+providers:
+  - name: mlops
+    folder: MLOps
+    type: file
+    disableDeletion: false
+    options:
+      path: /var/lib/grafana/dashboards

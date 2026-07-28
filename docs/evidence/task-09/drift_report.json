@@ -1,0 +1,26 @@
+{
+  "reference": "data/raw/churn.csv",
+  "batch": "data/live/current_batch.csv",
+  "n_reference": 20000,
+  "n_batch": 20000,
+  "threshold": 0.2,
+  "psi": {
+    "tenure_months": 0.0006,
+    "monthly_charges": 0.5874,
+    "total_charges": 0.1179,
+    "num_support_tickets": 0.624,
+    "payment_delay_days": 0.3539,
+    "data_usage_gb": 0.0011,
+    "contract_type": 0.0002
+  },
+  "max_psi": 0.624,
+  "drifted_features": [
+    "monthly_charges",
+    "num_support_tickets",
+    "payment_delay_days"
+  ],
+  "drift_detected": true,
+  "simulated_ingestion": {
+    "suggested_drift_level": 1.16
+  }
+}

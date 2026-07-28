@@ -12,3 +12,7 @@ mlflow/experiments/
 mlruns/
 
 # DVC adds per-directory .gitignore entries for pipeline outputs (data/, models/)
+
+# Transient runtime artifacts (curated copies live in docs/evidence/)
+data/live/
+reports/drift_report.json

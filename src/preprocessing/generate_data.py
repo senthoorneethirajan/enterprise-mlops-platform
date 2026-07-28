@@ -58,17 +58,22 @@ def generate(n_samples: int, seed: int, drift: float = 0.0) -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--drift", type=float, default=0.0,
-                        help="drift intensity for Phase 5 simulation (default 0 = baseline)")
+    parser.add_argument("--drift", type=float, default=None,
+                        help="drift intensity override (default: params.yaml data.drift)")
+    parser.add_argument("--seed", type=int, default=None,
+                        help="seed override (live batches should use a non-training seed)")
     parser.add_argument("--out", type=Path, default=RAW_PATH)
     args = parser.parse_args()
 
     params = yaml.safe_load((REPO_ROOT / "params.yaml").read_text())["data"]
-    df = generate(params["n_samples"], params["seed"], drift=args.drift)
+    drift = params.get("drift", 0.0) if args.drift is None else args.drift
+    seed = params["seed"] if args.seed is None else args.seed
+    df = generate(params["n_samples"], seed, drift=drift)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.out, index=False)
-    print(f"wrote {len(df)} rows -> {args.out} (churn rate {df['churn'].mean():.3f})")
+    print(f"wrote {len(df)} rows -> {args.out} "
+          f"(churn rate {df['churn'].mean():.3f}, drift {drift}, seed {seed})")
 
 
 if __name__ == "__main__":

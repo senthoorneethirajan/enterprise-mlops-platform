@@ -31,10 +31,11 @@ groups:
           summary: "churn-serving target down (deployment health)"
 
       - alert: DataDriftDetected
-        # drift_psi gauge is exported by the Phase 3 drift detector (Task 6);
+        # drift_psi is pushed by src/monitoring/drift.py via the Pushgateway;
         # PSI > 0.2 is the conventional "significant shift" threshold.
+        # `for` kept short: the detector runs as a batch job, not a stream.
         expr: max(drift_psi) > 0.2
-        for: 15m
+        for: 2m
         labels:
           severity: warn
         annotations:

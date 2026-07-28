@@ -1,0 +1,92 @@
+== [1/3] drift check: data/live/current_batch.csv vs training reference ==
+pushed drift_psi metrics to http://127.0.0.1:19091
+{
+  "reference": "data/raw/churn.csv",
+  "batch": "data/live/current_batch.csv",
+  "n_reference": 20000,
+  "n_batch": 20000,
+  "threshold": 0.2,
+  "psi": {
+    "tenure_months": 0.0006,
+    "monthly_charges": 0.5874,
+    "total_charges": 0.1179,
+    "num_support_tickets": 0.624,
+    "payment_delay_days": 0.3539,
+    "data_usage_gb": 0.0011,
+    "contract_type": 0.0002
+  },
+  "max_psi": 0.624,
+  "drifted_features": [
+    "monthly_charges",
+    "num_support_tickets",
+    "payment_delay_days"
+  ],
+  "drift_detected": true,
+  "simulated_ingestion": {
+    "suggested_drift_level": 1.16
+  }
+}
+== [2/3] DRIFT DETECTED -> automated retraining ==
+   simulated ingestion: pointing pipeline at new data world (drift level 1.16)
+Running stage 'dvc/dvc.yaml:generate_data':
+> python -m src.preprocessing.generate_data
+wrote 20000 rows -> /Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/data/raw/churn.csv (churn rate 0.562, drift 1.16, seed 42)
+Updating lock file 'dvc/dvc.lock'
+
+Running stage 'dvc/dvc.yaml:preprocess':
+> python -m src.preprocessing.preprocess
+train=16000 test=4000 features=9
+Updating lock file 'dvc/dvc.lock'
+
+Running stage 'dvc/dvc.yaml:train':
+> python -m src.training.train
+/Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/.venv/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+/Users/senthooa/Desktop/SKILLFY PROJECT/enterprise-mlops-platform/.venv/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  warnings.warn(
+Registered model 'churn-classifier' already exists. Creating a new version of this model...
+Created version '4' of model 'churn-classifier'.
+run_id=904719a73f9b4c0e96e5ae10b984e3ed
+{
+  "cv_roc_auc_mean": 0.8648998382435097,
+  "cv_roc_auc_std": 0.006033550536229609,
+  "train_accuracy": 0.936125,
+  "train_f1": 0.9434859544348595,
+  "train_roc_auc": 0.9879658412698412
+}
+Updating lock file 'dvc/dvc.lock'
+
+Running stage 'dvc/dvc.yaml:evaluate':
+> python -m src.evaluation.evaluate
+{
+  "test_accuracy": 0.779,
+  "test_precision": 0.7974738675958188,
+  "test_recall": 0.8137777777777778,
+  "test_f1": 0.805543334799824,
+  "test_roc_auc": 0.8585668571428571
+}
+quality gate passed
+Updating lock file 'dvc/dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc/dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.
+== [3/3] registry promotion ==
+{
+  "action": "promote",
+  "model": "churn-classifier",
+  "alias": "production",
+  "previous_version": 3,
+  "new_version": 4,
+  "run_id": "904719a73f9b4c0e96e5ae10b984e3ed",
+  "gated_on": {
+    "test_roc_auc": 0.8585668571428571,
+    "test_f1": 0.805543334799824
+  }
+}
+== RESULT: retraining complete, production alias updated ==

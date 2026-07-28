@@ -1,7 +1,7 @@
 {
-  "test_accuracy": 0.793,
-  "test_precision": 0.7318352059925094,
-  "test_recall": 0.6751900483759502,
-  "test_f1": 0.702372393961179,
-  "test_roc_auc": 0.8606190096830402
+  "test_accuracy": 0.779,
+  "test_precision": 0.7974738675958188,
+  "test_recall": 0.8137777777777778,
+  "test_f1": 0.805543334799824,
+  "test_roc_auc": 0.8585668571428571
 }

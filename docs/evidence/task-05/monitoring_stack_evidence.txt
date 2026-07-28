@@ -1,0 +1,114 @@
+=== Task 5 evidence: live monitoring stack on k3s (Tue Jul 28 16:01:00 IST 2026) ===
+
+--- monitoring pods ---
+NAME                           READY   STATUS    RESTARTS   AGE
+grafana-6dfccc5bc6-79h89       1/1     Running   0          3m20s
+prometheus-64ddb4b656-v544j    1/1     Running   0          3m20s
+pushgateway-7759c44bb7-vb9vj   1/1     Running   0          3m20s
+
+--- Prometheus: serving targets up ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "10.42.0.15:8000",
+                    "job": "churn-serving",
+                    "pod": "churn-serving-stable-8659d758b4-7sbzk",
+                    "track": "stable"
+                },
+                "value": [
+                    1785234660.832,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "10.42.0.16:8000",
+                    "job": "churn-serving",
+                    "pod": "churn-serving-stable-8659d758b4-zvpxl",
+                    "track": "stable"
+                },
+                "value": [
+                    1785234660.832,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "instance": "10.42.0.14:8000",
+                    "job": "churn-serving",
+                    "pod": "churn-serving-stable-8659d758b4-799mh",
+                    "track": "stable"
+                },
+                "value": [
+                    1785234660.832,
+                    "1"
+                ]
+            }
+        ]
+    }
+}
+
+--- Prometheus: p95 inference latency (s) ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {},
+                "value": [
+                    1785234660.883,
+                    "0.024610691701026765"
+                ]
+            }
+        ]
+    }
+}
+
+--- Prometheus: request rate by model_version ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "model_version": "v2"
+                },
+                "value": [
+                    1785234660.933,
+                    "1.56332984217617"
+                ]
+            }
+        ]
+    }
+}
+
+--- Prometheus: 5xx error rate (expect 0) ---
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": []
+    }
+}
+
+--- Alert rules loaded ---
+HighErrorRate: state=inactive
+HighLatencyP95: state=inactive
+ServingDown: state=inactive
+DataDriftDetected: state=inactive
+
+--- Grafana health + provisioned dashboard ---
+{
+  "commit": "5b85c4c2fcf5d32d4f68aaef345c53096359b2f1",
+  "database": "ok",
+  "version": "11.1.0"
+}[{"id":2,"uid":"churn-serving","title":"Churn Serving — Production Monitoring","uri":"db/churn-serving-e28094-production-monitoring","url":"/d/churn-serving/churn-serving-e28094-production-monitoring","slug":"","type":"dash-db","tags":["mlops","task-05"],"isStarred":false,"folderId":1,"folderUid":"dftgp9wu7c7i8c","folderTitle":"MLOps","folderUrl":"/dashboards/f/dftgp9wu7c7i8c/MLOps","sortMeta":0}]

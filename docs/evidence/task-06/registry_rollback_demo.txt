@@ -1,0 +1,40 @@
+=== Registry rollback demo (production alias v4 -> v3 -> v4) ===
+{
+  "action": "rollback",
+  "model": "churn-classifier",
+  "alias": "production",
+  "previous_version": 4,
+  "new_version": 3
+}
+
+{
+  "model": "churn-classifier",
+  "production_alias": 3,
+  "versions": [
+    {
+      "version": 1,
+      "run_id": "3e147dea5a1a4d3896ae2ea1e2e3da5c"
+    },
+    {
+      "version": 2,
+      "run_id": "a2d4f8b981d84228be0cb97f10cdbbb9"
+    },
+    {
+      "version": 3,
+      "run_id": "e89d954dde9948b3860bbb5b2e10a954"
+    },
+    {
+      "version": 4,
+      "run_id": "904719a73f9b4c0e96e5ae10b984e3ed"
+    }
+  ]
+}
+
+--- restore ---
+{
+  "action": "rollback",
+  "model": "churn-classifier",
+  "alias": "production",
+  "previous_version": 3,
+  "new_version": 4
+}
