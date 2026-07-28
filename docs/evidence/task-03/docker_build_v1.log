@@ -1,0 +1,170 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  1.006GB
+Step 1/12 : FROM python:3.12-slim
+3.12-slim: Pulling from library/python
+d8ee943bca38: Pulling fs layer
+e11779a4584d: Pulling fs layer
+ba2b6cc1d0cb: Pulling fs layer
+59f54fbcd984: Pulling fs layer
+e11779a4584d: Download complete
+d8ee943bca38: Download complete
+ba2b6cc1d0cb: Download complete
+c967e4758aa7: Download complete
+159430a0bdce: Download complete
+59f54fbcd984: Download complete
+d8ee943bca38: Pull complete
+59f54fbcd984: Pull complete
+e11779a4584d: Pull complete
+ba2b6cc1d0cb: Pull complete
+Digest: sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de
+Status: Downloaded newer image for python:3.12-slim
+ ---> 57cd7c3a7a27
+Step 2/12 : WORKDIR /app
+ ---> Running in ce464fe55797
+ ---> Removed intermediate container ce464fe55797
+ ---> c407cede9d31
+Step 3/12 : COPY docker/requirements-serving.txt .
+ ---> bb72943e6b78
+Step 4/12 : RUN pip install --no-cache-dir -r requirements-serving.txt
+ ---> Running in 1d0b3ff41fe7
+Collecting numpy==2.5.1 (from -r requirements-serving.txt (line 3))
+  Downloading numpy-2.5.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+Collecting pandas==2.3.3 (from -r requirements-serving.txt (line 4))
+  Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl.metadata (91 kB)
+Collecting scikit-learn==1.9.0 (from -r requirements-serving.txt (line 5))
+  Downloading scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (11 kB)
+Collecting joblib==1.5.3 (from -r requirements-serving.txt (line 6))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting fastapi==0.140.0 (from -r requirements-serving.txt (line 7))
+  Downloading fastapi-0.140.0-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.51.0 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading uvicorn-0.51.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting prometheus-client==0.26.0 (from -r requirements-serving.txt (line 9))
+  Downloading prometheus_client-0.26.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==2.3.3->-r requirements-serving.txt (line 4))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas==2.3.3->-r requirements-serving.txt (line 4))
+  Downloading pytz-2026.3.post1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas==2.3.3->-r requirements-serving.txt (line 4))
+  Downloading tzdata-2026.3-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting scipy>=1.10.0 (from scikit-learn==1.9.0->-r requirements-serving.txt (line 5))
+  Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (62 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn==1.9.0->-r requirements-serving.txt (line 5))
+  Downloading narwhals-2.24.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn==1.9.0->-r requirements-serving.txt (line 5))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting starlette>=0.46.0 (from fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading starlette-1.3.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting pydantic>=2.9.0 (from fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting click>=7.0 (from uvicorn==0.51.0->uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading click-8.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.51.0->uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting httptools>=0.8.0 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading httptools-0.8.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (3.5 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=13.0 (from uvicorn[standard]==0.51.0->-r requirements-serving.txt (line 8))
+  Downloading websockets-16.1.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (6.8 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2.9.0->fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.3.3->-r requirements-serving.txt (line 4))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting anyio<5,>=3.6.2 (from starlette>=0.46.0->fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading anyio-4.14.2-py3-none-any.whl.metadata (4.6 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette>=0.46.0->fastapi==0.140.0->-r requirements-serving.txt (line 7))
+  Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+Downloading numpy-2.5.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.2/15.2 MB 16.2 MB/s eta 0:00:00
+Downloading pandas-2.3.3-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (11.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.7/11.7 MB 12.9 MB/s eta 0:00:00
+Downloading scikit_learn-1.9.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (8.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 12.3 MB/s eta 0:00:00
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+Downloading fastapi-0.140.0-py3-none-any.whl (130 kB)
+Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
+Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.8.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (518 kB)
+Downloading narwhals-2.24.0-py3-none-any.whl (461 kB)
+Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 8.4 MB/s eta 0:00:00
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (775 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 775.1/775.1 kB 7.8 MB/s eta 0:00:00
+Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (34.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.0/34.0 MB 10.4 MB/s eta 0:00:00
+Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
+Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 13.8 MB/s eta 0:00:00
+Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (453 kB)
+Downloading websockets-16.1.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (188 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading idna-3.18-py3-none-any.whl (65 kB)
+Installing collected packages: pytz, websockets, uvloop, tzdata, typing-extensions, threadpoolctl, six, pyyaml, python-dotenv, prometheus-client, numpy, narwhals, joblib, idna, httptools, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, scipy, python-dateutil, pydantic-core, anyio, watchfiles, starlette, scikit-learn, pydantic, pandas, fastapi
+Successfully installed annotated-doc-0.0.4 annotated-types-0.8.0 anyio-4.14.2 click-8.4.2 fastapi-0.140.0 h11-0.16.0 httptools-0.8.0 idna-3.18 joblib-1.5.3 narwhals-2.24.0 numpy-2.5.1 pandas-2.3.3 prometheus-client-0.26.0 pydantic-2.13.4 pydantic-core-2.46.4 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 pytz-2026.3.post1 pyyaml-6.0.3 scikit-learn-1.9.0 scipy-1.18.0 six-1.17.0 starlette-1.3.1 threadpoolctl-3.6.0 typing-extensions-4.16.0 typing-inspection-0.4.2 tzdata-2026.3 uvicorn-0.51.0 uvloop-0.22.1 watchfiles-1.2.0 websockets-16.1.1
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 25.0.1 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container 1d0b3ff41fe7
+ ---> 6205be96c904
+Step 5/12 : COPY src/ src/
+ ---> 4d3582664f81
+Step 6/12 : COPY models/model.pkl models/feature_names.json models/
+ ---> 1acf4e961112
+Step 7/12 : ENV MODEL_PATH=/app/models/model.pkl     FEATURE_NAMES_PATH=/app/models/feature_names.json     MODEL_VERSION=v1
+ ---> Running in 0afe61da3ec9
+ ---> Removed intermediate container 0afe61da3ec9
+ ---> 4178913a64ad
+Step 8/12 : RUN useradd --create-home appuser
+ ---> Running in 51f66f618902
+ ---> Removed intermediate container 51f66f618902
+ ---> 32b75e5fe61b
+Step 9/12 : USER appuser
+ ---> Running in c4d5b8c7e9bb
+ ---> Removed intermediate container c4d5b8c7e9bb
+ ---> 5cb7bd22dd25
+Step 10/12 : EXPOSE 8000
+ ---> Running in c24517a826f9
+ ---> Removed intermediate container c24517a826f9
+ ---> c4e367343f9c
+Step 11/12 : HEALTHCHECK --interval=15s --timeout=3s --retries=3   CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')" || exit 1
+ ---> Running in a71c00a4020d
+ ---> Removed intermediate container a71c00a4020d
+ ---> 6604522f7969
+Step 12/12 : CMD ["uvicorn", "src.serving.app:app", "--host", "0.0.0.0", "--port", "8000"]
+ ---> Running in b411cd861648
+ ---> Removed intermediate container b411cd861648
+ ---> e92da5f01dfb
+Successfully built e92da5f01dfb
+Successfully tagged churn-serving:v1

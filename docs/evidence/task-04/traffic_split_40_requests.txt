@@ -1,0 +1,41 @@
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2081,"churn_predicted":false,"model_version":"v1"}
+{"churn_probability":0.2077,"churn_predicted":false,"model_version":"v2"}
+pod "traffic-test" deleted from default namespace

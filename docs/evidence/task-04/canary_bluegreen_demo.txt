@@ -1,0 +1,48 @@
+=== STEP 1: canary guard on HEALTHY canary ===
+2026-07-27T15:14:01 check 1/2: healthy ready=1/1
+2026-07-27T15:14:03 check 2/2: healthy ready=1/1
+canary healthy after 2 checks — safe to promote
+
+=== STEP 2: BLUE/GREEN - scale canary (green) to full size ===
+deployment.apps/churn-serving-canary scaled
+Waiting for deployment "churn-serving-canary" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "churn-serving-canary" rollout to finish: 2 of 3 updated replicas are available...
+deployment "churn-serving-canary" successfully rolled out
+--- flip Service selector to green (track=canary) ---
+service/churn-serving patched
+
+=== STEP 3: verify 100% of traffic on GREEN (v2) ===
+v2 responses out of 10: 10
+
+=== STEP 4: INSTANT ROLLBACK - flip selector back to blue (track=stable) ===
+service/churn-serving patched
+v1 responses out of 10 after rollback: 10
+
+=== STEP 5: PROMOTE - v2 becomes stable, canary retired ===
+service/churn-serving patched
+deployment.apps/churn-serving-stable image updated
+deployment.apps/churn-serving-stable env updated
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "churn-serving-stable" rollout to finish: 1 old replicas are pending termination...
+deployment "churn-serving-stable" successfully rolled out
+deployment.apps "churn-serving-canary" deleted from default namespace
+--- final state ---
+NAME                                    READY   STATUS        RESTARTS   AGE   TRACK
+churn-serving-canary-5684dbcbc5-bnqst   1/1     Terminating   0          18h   canary
+churn-serving-canary-5684dbcbc5-v69cf   1/1     Terminating   0          18h   canary
+churn-serving-canary-5684dbcbc5-wfvhz   1/1     Terminating   0          18h   canary
+churn-serving-stable-677c5d6b4d-hbfr8   1/1     Terminating   0          18h   stable
+churn-serving-stable-8659d758b4-799mh   1/1     Running       0          22s   stable
+churn-serving-stable-8659d758b4-7sbzk   1/1     Running       0          14s   stable
+churn-serving-stable-8659d758b4-zvpxl   1/1     Running       0          7s    stable
+{"status":"ok","model_version":"v2"}pod "promo-test" deleted from default namespace
+

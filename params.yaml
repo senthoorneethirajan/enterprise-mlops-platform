@@ -8,8 +8,9 @@ preprocess:
   seed: 42
 
 train:
-  n_estimators: 300
-  max_depth: 12
+  # v2 iteration: more trees, slightly deeper — canary-tested against v1 (Task 4)
+  n_estimators: 400
+  max_depth: 14
   min_samples_leaf: 2
   seed: 42
 

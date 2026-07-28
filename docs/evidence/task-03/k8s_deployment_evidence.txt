@@ -1,0 +1,59 @@
+=== kubectl get pods -l app=churn-serving -o wide ===
+NAME                                    READY   STATUS    RESTARTS   AGE    IP          NODE     NOMINATED NODE   READINESS GATES
+churn-serving-stable-677c5d6b4d-4dxvk   1/1     Running   0          107s   10.42.0.6   colima   <none>           <none>
+churn-serving-stable-677c5d6b4d-66jlc   1/1     Running   0          107s   10.42.0.7   colima   <none>           <none>
+churn-serving-stable-677c5d6b4d-hbfr8   1/1     Running   0          107s   10.42.0.5   colima   <none>           <none>
+
+=== kubectl get svc churn-serving ===
+NAME            TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+churn-serving   ClusterIP   10.43.1.126   <none>        80/TCP    107s
+
+=== kubectl describe deployment churn-serving-stable (probes/resources) ===
+Name:                   churn-serving-stable
+Namespace:              default
+CreationTimestamp:      Mon, 27 Jul 2026 15:06:09 +0530
+Labels:                 app=churn-serving
+                        track=stable
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=churn-serving,track=stable
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:       app=churn-serving
+                track=stable
+  Annotations:  prometheus.io/path: /metrics
+                prometheus.io/port: 8000
+                prometheus.io/scrape: true
+  Containers:
+   api:
+    Image:      churn-serving:v1
+    Port:       8000/TCP
+    Host Port:  0/TCP
+    Limits:
+      cpu:     500m
+      memory:  512Mi
+    Requests:
+      cpu:      100m
+      memory:   256Mi
+    Liveness:   http-get http://:8000/health delay=10s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:8000/health delay=3s timeout=1s period=5s #success=1 #failure=3
+    Environment:
+      MODEL_VERSION:  v1
+    Mounts:           <none>
+  Volumes:            <none>
+  Node-Selectors:     <none>
+  Tolerations:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+
+=== Inference through Service (port-forward svc/churn-serving) ===
+GET /health:
+{"status":"ok","model_version":"v1"}
+POST /predict (risky customer):
+{"churn_probability":0.9961,"churn_predicted":true,"model_version":"v1"}
+POST /predict (loyal customer):
+{"churn_probability":0.0029,"churn_predicted":false,"model_version":"v1"}

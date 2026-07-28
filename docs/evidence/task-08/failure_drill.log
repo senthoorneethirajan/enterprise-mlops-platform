@@ -1,0 +1,29 @@
+=== TASK 8 DRILL (attempt 2, fixed guard): bad model deployment -> detection -> automated rollback ===
+
+--- 1. deploy canary with injected failure (SIMULATE_UNHEALTHY=1 -> /health 503) ---
+deployment.apps/churn-serving-canary created
+deployment.apps/churn-serving-canary env updated
+
+--- 2. canary pod state: readiness probe failing ---
+NAME                                    READY   STATUS    RESTARTS   AGE
+churn-serving-canary-5684dbcbc5-75bjj   1/1     Running   0          20s
+churn-serving-canary-798695b6f-t4blk    0/1     Running   0          20s
+
+--- 3. canary guard: detects stuck rollout, rolls back automatically ---
+2026-07-28T11:37:45 rollout gate: waiting up to 75s for churn-serving-canary rollout to complete
+Waiting for deployment "churn-serving-canary" rollout to finish: 1 old replicas are pending termination...
+error: timed out waiting for the condition
+2026-07-28T11:39:00 ROLLBACK TRIGGERED: rollout stuck (new version never became ready)
+deployment.apps "churn-serving-canary" deleted from default namespace
+2026-07-28T11:39:00 ROLLBACK COMPLETE: canary deleted, 100% traffic on stable track
+GUARD_EXIT=1 (non-zero signals failed rollout to CI/orchestrator)
+
+--- 4. post-rollback: only stable (v2) pods, service healthy ---
+NAME                                    READY   STATUS        RESTARTS     AGE    TRACK
+churn-serving-canary-5684dbcbc5-75bjj   1/1     Terminating   0            96s    canary
+churn-serving-canary-798695b6f-t4blk    0/1     Terminating   3 (5s ago)   96s    canary
+churn-serving-stable-8659d758b4-799mh   1/1     Running       0            111m   stable
+churn-serving-stable-8659d758b4-7sbzk   1/1     Running       0            111m   stable
+churn-serving-stable-8659d758b4-zvpxl   1/1     Running       0            111m   stable
+{"status":"ok","model_version":"v2"}pod "drill2-test" deleted from default namespace
+

@@ -50,7 +50,7 @@ map one-to-one to the platform components.
 | Phase | Task | Status |
 | --- | --- | --- |
 | 1 ML Lifecycle Foundation | 1 Experiment tracking & versioning | Done (evidence in docs/evidence/task-01) |
-| 2 CI/CD for ML | 2 CI pipeline: Done (evidence in docs/evidence/task-02) / 3 Packaging & deploy / 4 Safe deployment | In progress |
+| 2 CI/CD for ML | 2 CI pipeline / 3 Packaging & K8s deploy / 4 Canary + blue/green + auto-rollback | Done (evidence task-02..04) |
 | 3 Monitoring & Drift | 5 Monitoring / 6 Drift & retraining | Scaffolded |
 | 4 LLM Integration | 7 LLM pipeline | Planned |
-| 5 Failure & Incident Simulation | 8 Deployment failure / 9 Drift incident | Planned |
+| 5 Failure & Incident Simulation | 8 Deployment failure: Done (RCA in task-08) / 9 Drift incident | In progress |

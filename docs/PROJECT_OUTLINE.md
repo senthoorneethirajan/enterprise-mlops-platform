@@ -47,10 +47,12 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 - [x] Task 2: GitHub Actions workflow — on push: install, `dvc repro`, evaluation gate,
       upload model + metrics artifacts — COMPLETE 2026-07-27, run 30251369242 green
       (repo: github.com/senthoorneethirajan/enterprise-mlops-platform)
-- [ ] Task 3: `docker/Dockerfile` for FastAPI serving app; `k8s/deployment.yaml`,
-      `k8s/service.yaml`; working `/predict` + `/health` endpoints
-- [ ] Task 4: `k8s/canary.yaml`; rollback script/job that flips traffic back and rolls the
-      registry alias to the previous version
+- [x] Task 3: Docker image built + smoke-tested; 3-replica K8s Deployment + Service on
+      Colima k3s; `/predict`, `/health`, `/metrics` live — COMPLETE 2026-07-28
+- [x] Task 4: canary at ~25% traffic (verified 29:9 over 40 requests); blue/green flip
+      + instant rollback both directions; v2 promoted to stable; automated rollback via
+      `scripts/canary_guard.sh` — COMPLETE 2026-07-28 (registry alias rollback lands
+      with Task 6 promotion tooling)
 - Evidence → `docs/evidence/task-02..04/` (CI run logs, endpoint responses, rollback logs)
 
 ### Phase 3 — Monitoring & Drift (Tasks 5-6)
@@ -72,8 +74,10 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 - Evidence → `docs/evidence/task-07/`
 
 ### Phase 5 — Failure & Incident Simulation (Tasks 8-9)
-- [ ] Task 8: deploy an intentionally bad model → canary health check fails → automated
-      rollback; write RCA in `docs/evidence/task-08/RCA.md`
+- [x] Task 8: bad model deployed to canary (SIMULATE_UNHEALTHY drill) → stuck rollout
+      detected → automated rollback in <90s, stable v2 untouched; RCA written including
+      a real finding (readiness-based guard masked crash-looping pod during rolling
+      update; fixed with rollout gate) — COMPLETE 2026-07-28, `docs/evidence/task-08/`
 - [ ] Task 9: simulate data drift (shifted generator params) → drift alert fires → retraining
       triggered → validation report
 - Evidence → `docs/evidence/task-08..09/`
@@ -90,7 +94,8 @@ narrative, is tabular/CPU-friendly, and keeps the focus on MLOps rather than mod
 
 ## External dependencies to sort out
 
-- **Docker Desktop** (not installed) — required for Tasks 3-5, 8
-- **GitHub remote repo** — required to show push-triggered CI (Task 2)
+- ~~Docker Desktop~~ — resolved with **Colima** (docker engine + k3s Kubernetes,
+  no licensing concerns on a corporate machine): `colima start --cpu 4 --memory 8 --kubernetes`
+- ~~GitHub remote repo~~ — live at github.com/senthoorneethirajan/enterprise-mlops-platform
 - **LLM access** (OpenAI/Bedrock/local Ollama) — required for Task 7 (RAGAS also needs an
-  LLM as judge)
+  LLM as judge). STILL OPEN.
